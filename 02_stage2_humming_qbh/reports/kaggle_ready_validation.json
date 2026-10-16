@@ -1,0 +1,29 @@
+{
+  "created_at_utc": "2026-10-16T02:15:20.129165+00:00",
+  "tests_run": 36,
+  "passed": 33,
+  "skipped": [
+    {
+      "test": "test_blocked_scores_match_naive_scores (test_final_solution.TorchTests.test_blocked_scores_match_naive_scores)",
+      "reason": "PyTorch not installed in this validation runtime"
+    },
+    {
+      "test": "test_triplet_losses_have_finite_gradients (test_final_solution.TorchTests.test_triplet_losses_have_finite_gradients)",
+      "reason": "PyTorch not installed in this validation runtime"
+    },
+    {
+      "test": "test_cpu_probe_updates_then_restores_weights_buffers_rng_and_optimizer (test_final_training_reliability.PreflightTorchTests.test_cpu_probe_updates_then_restores_weights_buffers_rng_and_optimizer)",
+      "reason": "PyTorch not installed in this validation runtime"
+    }
+  ],
+  "failures": 0,
+  "errors": 0,
+  "notebook": "notebooks/kaggle/train/conformer_bytehum_qbh_final_train_kaggle.ipynb",
+  "sha256": "da9f9ce843b66fb590cea52e1b686c12bfbd6f6b1e59499838050c1bea0d921b",
+  "code_cells": 16,
+  "source_sha256": "b4183046a61e956e04af26a17991b44a6bc6085232031e78485f8c38d502feb7",
+  "source_template_code_preserved": true,
+  "kaggle_bootstrap_tests_use_mock_gpu": true,
+  "gpu_training_executed": false,
+  "checkpoint_schema": 2
+}

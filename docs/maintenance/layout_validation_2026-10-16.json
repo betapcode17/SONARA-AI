@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-16",
+  "builder_paths": [
+    {
+      "script": "build_accuracy_finetune_kaggle_notebook.py",
+      "source_resolves": true,
+      "target": "notebooks\\kaggle\\train\\conformer_bytehum_qbh_accuracy_finetune_kaggle.ipynb"
+    },
+    {
+      "script": "build_accuracy_finetune_notebook.py",
+      "source_resolves": true,
+      "target": "notebooks\\local_4gb\\train\\conformer_bytehum_qbh_accuracy_finetune_local_4gb.ipynb"
+    },
+    {
+      "script": "build_final_solution_notebooks.py",
+      "source_resolves": true,
+      "target": "phase-dependent"
+    },
+    {
+      "script": "build_kaggle_ready_notebook.py",
+      "source_resolves": true,
+      "target": "notebooks\\kaggle\\train\\conformer_bytehum_qbh_final_train_kaggle.ipynb"
+    },
+    {
+      "script": "build_local_4gb_notebook.py",
+      "source_resolves": true,
+      "target": "notebooks\\local_4gb\\train\\conformer_bytehum_qbh_local_4gb.ipynb"
+    },
+    {
+      "script": "build_local_evaluation_notebook.py",
+      "source_resolves": true,
+      "target": "notebooks\\local_4gb\\evaluate\\conformer_bytehum_qbh_evaluation_local_4gb.ipynb"
+    },
+    {
+      "script": "build_retrieval_ablation_notebook.py",
+      "source_resolves": true,
+      "target": "phase-dependent"
+    },
+    {
+      "script": "build_retrieval_candidate_ablation_notebook.py",
+      "source_resolves": true,
+      "target": "notebooks\\local_4gb\\experiments\\conformer_bytehum_qbh_candidate_ablation_local_4gb.ipynb"
+    }
+  ],
+  "builders_executed_in_temporary_copy": [
+    "build_final_solution_notebooks.py",
+    "build_kaggle_ready_notebook.py",
+    "build_local_4gb_notebook.py",
+    "build_local_evaluation_notebook.py",
+    "build_retrieval_ablation_notebook.py"
+  ],
+  "v5_rebuild_matches_existing_bytes": true,
+  "existing_v5_test_suite": {
+    "tests_run": 23,
+    "passed": 21,
+    "skipped": 2,
+    "skip_reason": "PyTorch unavailable in validation runtime"
+  },
+  "builders_requiring_nbformat": "Paths and syntax checked; nbformat is not installed, so these builders were not executed.",
+  "compiled_notebook_cells": 228,
+  "root_discovery_working_directories_checked": 6,
+  "documentation_links_verified": true,
+  "distribution_archive_entries": 8
+}

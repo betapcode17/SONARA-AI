@@ -1,0 +1,38 @@
+# Cấu hình Thực nghiệm Giai Đoạn 1: Cover Song Identification (CSI)
+# Mục tiêu: Huấn luyện mạng ResNet-IBN-18 trên dữ liệu Cover Song để học biểu diễn nốt nhạc cốt lõi
+
+audio:
+  sample_rate: 22050
+  chunk_duration: 10.0      # Độ dài mỗi đoạn âm thanh cục bộ (10 giây)
+  hop_duration: 3.0         # Bước nhảy giữa các đoạn (3 giây)
+
+cqt:
+  n_bins: 84                # 84 bins CQT bao phủ 7 quãng tám (C1 -> B7)
+  bins_per_octave: 12       # 12 nốt bán âm trong mỗi quãng tám
+  hop_length: 512           # Bước nhảy FFT hop
+  target_frames: 431        # Kích thước trục thời gian chuẩn hóa cho 10s (431 frames)
+
+model:
+  in_channels: 1
+  embedding_dim: 512        # Vector đặc trưng 512 chiều (chuẩn ByteCover3 / ByteHum)
+  gem_p: 3.0                # Tham số lũy thừa GeM Pooling
+  dropout: 0.1
+  pretrained: true          # Khởi tạo trọng số từ ImageNet
+
+loss:
+  margin: 0.2               # Khoảng cách lề Triplet Loss
+  mining_type: "hard"       # Chế độ đào mẫu: "hard", "semi_hard", hoặc "random"
+
+training:
+  batch_size: 16
+  grad_accum_steps: 2
+  learning_rate: 1.0e-4     # Tốc độ học khởi tạo cho bài toán CSI
+  weight_decay: 1.0e-4      # L2 Regularization chống overfitting
+  epochs: 30
+  device: "cuda"
+
+paths:
+  dataset_dir: "01_stage1_cover_song_csi/datasets/covers80"
+  cqt_cache_dir: "01_stage1_cover_song_csi/datasets/cqt_cache"
+  checkpoint_dir: "01_stage1_cover_song_csi/checkpoints"
+  best_checkpoint: "01_stage1_cover_song_csi/checkpoints/resnet_ibn_csi_best.pth"

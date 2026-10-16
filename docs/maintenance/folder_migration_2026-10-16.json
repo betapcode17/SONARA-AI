@@ -1,0 +1,415 @@
+{
+  "date": "2026-10-16",
+  "workspace": "E:\\HOCKY7\\PBL6\\code",
+  "moves": [
+    {
+      "old": "PBL6.md",
+      "new": "docs/project/PBL6.md",
+      "sha256_before": "a0360ec8d3c6b77f15a040f9ebd1750fa46ab966191c27824853e9fcaeedef03",
+      "bytes_before": 10544,
+      "sha256_after": "a0360ec8d3c6b77f15a040f9ebd1750fa46ab966191c27824853e9fcaeedef03",
+      "content_updated": false
+    },
+    {
+      "old": "PBL6 - DOCUMEMT.docx",
+      "new": "docs/project/PBL6 - DOCUMEMT.docx",
+      "sha256_before": "7d1ceccc49790bc72c370d300927806f35d51dd05d3a07d0009d74b313499adb",
+      "bytes_before": 91378,
+      "sha256_after": "7d1ceccc49790bc72c370d300927806f35d51dd05d3a07d0009d74b313499adb",
+      "content_updated": false
+    },
+    {
+      "old": "Plan.md",
+      "new": "docs/history/Plan.md",
+      "sha256_before": "221807fed3217e7261d441382791a8050cae11c51c8ddf8bdd40f90a2e31b5b8",
+      "bytes_before": 10419,
+      "sha256_after": "221807fed3217e7261d441382791a8050cae11c51c8ddf8bdd40f90a2e31b5b8",
+      "content_updated": false
+    },
+    {
+      "old": "Error.md",
+      "new": "docs/history/Error.md",
+      "sha256_before": "46736952074251c0ee040c505ae3934eb476c9e2910ebe26ab77dfdac7c9d2fa",
+      "bytes_before": 6566,
+      "sha256_after": "46736952074251c0ee040c505ae3934eb476c9e2910ebe26ab77dfdac7c9d2fa",
+      "content_updated": false
+    },
+    {
+      "old": "ICASSP2024_bytehum.pdf",
+      "new": "docs/references/ICASSP2024_bytehum.pdf",
+      "sha256_before": "96795eea076e1ada68ca5bf3125427a4ca6830f98f31d64598f1e40451f34ffd",
+      "bytes_before": 550075,
+      "sha256_after": "96795eea076e1ada68ca5bf3125427a4ca6830f98f31d64598f1e40451f34ffd",
+      "content_updated": false
+    },
+    {
+      "old": "cmc_curve.png",
+      "new": "docs/figures/cmc_curve.png",
+      "sha256_before": "a074a23c03dd9b440b10d8a5ac1b2199ae85e040292a0e41048433e595ae4d13",
+      "bytes_before": 92911,
+      "sha256_after": "a074a23c03dd9b440b10d8a5ac1b2199ae85e040292a0e41048433e595ae4d13",
+      "content_updated": false
+    },
+    {
+      "old": "loss_curves.png",
+      "new": "docs/figures/loss_curves.png",
+      "sha256_before": "aec50e5427a08446e4aa57a60f0d3dbbfb98e238ce2c2a4a646d0c13a1670524",
+      "bytes_before": 137300,
+      "sha256_after": "aec50e5427a08446e4aa57a60f0d3dbbfb98e238ce2c2a4a646d0c13a1670524",
+      "content_updated": false
+    },
+    {
+      "old": "01_stage1_cover_song_csi/notebooks/coverhunter_conformer_csi.ipynb",
+      "new": "01_stage1_cover_song_csi/notebooks/local/coverhunter_conformer_csi.ipynb",
+      "sha256_before": "a7a8f27a0e9642b71ece72166c011976bd7ef1ce526e07e75e9f649b7a72a1ac",
+      "bytes_before": 321207,
+      "sha256_after": "f0bb287773ccfa60bb5db8d9156950da62eb904058a57209a5d6ace534867914",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_final_train_kaggle.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/kaggle/train/conformer_bytehum_qbh_final_train_kaggle.ipynb",
+      "sha256_before": "8b222dd221ce8ae9c8e1311ea3f35cf92b08d7b0a3740aed92df74283033eccc",
+      "bytes_before": 187716,
+      "sha256_after": "8b222dd221ce8ae9c8e1311ea3f35cf92b08d7b0a3740aed92df74283033eccc",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_final_evaluation.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/kaggle/evaluate/conformer_bytehum_qbh_final_evaluation.ipynb",
+      "sha256_before": "12fc94d36e8721e4ddfcb98fa1cea444846d9fad83696f6e3dce9869ac5cad0b",
+      "bytes_before": 170388,
+      "sha256_after": "12fc94d36e8721e4ddfcb98fa1cea444846d9fad83696f6e3dce9869ac5cad0b",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_final_train.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/templates/conformer_bytehum_qbh_final_train.ipynb",
+      "sha256_before": "a7d2011b4231911cece25840668c28ffc16c9487d97a967ef9044e16f4ac406e",
+      "bytes_before": 180375,
+      "sha256_after": "a7d2011b4231911cece25840668c28ffc16c9487d97a967ef9044e16f4ac406e",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_kaggle.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/kaggle/archive/conformer_bytehum_qbh_kaggle.ipynb",
+      "sha256_before": "873522d48506f2a3c6a33aadeca288805e4a1f2c34ac3cbada583fe02faf198d",
+      "bytes_before": 521076,
+      "sha256_after": "873522d48506f2a3c6a33aadeca288805e4a1f2c34ac3cbada583fe02faf198d",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_evaluation_kaggle.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/kaggle/archive/conformer_bytehum_qbh_evaluation_kaggle.ipynb",
+      "sha256_before": "fb47b95b4945359e1cc5ec4febe844cad2d632b5994290956bded5844d5d1a35",
+      "bytes_before": 231328,
+      "sha256_after": "fb47b95b4945359e1cc5ec4febe844cad2d632b5994290956bded5844d5d1a35",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_local_4gb.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/local_4gb/train/conformer_bytehum_qbh_local_4gb.ipynb",
+      "sha256_before": "0f428a31e41aec56e14eb3a68b0c58054f0a84eebb00bb882b2941124cc4ef5c",
+      "bytes_before": 526422,
+      "sha256_after": "0f428a31e41aec56e14eb3a68b0c58054f0a84eebb00bb882b2941124cc4ef5c",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_accuracy_finetune_local_4gb.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/local_4gb/train/conformer_bytehum_qbh_accuracy_finetune_local_4gb.ipynb",
+      "sha256_before": "fc18e1b5b5388c73e62e7913185eb72513a383ca3337b8fef1f14b8ac4a7a19d",
+      "bytes_before": 218010,
+      "sha256_after": "fc18e1b5b5388c73e62e7913185eb72513a383ca3337b8fef1f14b8ac4a7a19d",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_evaluation_local_4gb.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/local_4gb/evaluate/conformer_bytehum_qbh_evaluation_local_4gb.ipynb",
+      "sha256_before": "ef7a2cc41dac7d134cfcb848ab509a426df05359d443ea201e6bce7caa35d2fa",
+      "bytes_before": 259638,
+      "sha256_after": "ef7a2cc41dac7d134cfcb848ab509a426df05359d443ea201e6bce7caa35d2fa",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_candidate_ablation_local_4gb.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/local_4gb/experiments/conformer_bytehum_qbh_candidate_ablation_local_4gb.ipynb",
+      "sha256_before": "2cdc904f7bb1ed0a36b75bf6b3270d9f432745e5ccbdd76d38410088f0fc6cb5",
+      "bytes_before": 183963,
+      "sha256_after": "2cdc904f7bb1ed0a36b75bf6b3270d9f432745e5ccbdd76d38410088f0fc6cb5",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh_retrieval_ablation_local_4gb.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/local_4gb/experiments/conformer_bytehum_qbh_retrieval_ablation_local_4gb.ipynb",
+      "sha256_before": "5bdcc7577e9d9a9a545476c8e0830b4ea2adaa31f0f9ec97282ebb7a080e731c",
+      "bytes_before": 4097,
+      "sha256_after": "5bdcc7577e9d9a9a545476c8e0830b4ea2adaa31f0f9ec97282ebb7a080e731c",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/conformer_bytehum_qbh.ipynb",
+      "new": "02_stage2_humming_qbh/notebooks/archive/conformer_bytehum_qbh.ipynb",
+      "sha256_before": "f03d07a25a5683bc1ed4fdae8fa472ab0755f1ecd2e0988d9af27f04d1a5750c",
+      "bytes_before": 3227907,
+      "sha256_after": "adf9dd7f6f9fbb5808a43dddac67db536dca2e23faa11c16757569ca0480ace4",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/build_accuracy_finetune_kaggle_notebook.py",
+      "new": "02_stage2_humming_qbh/scripts/notebook_builders/build_accuracy_finetune_kaggle_notebook.py",
+      "sha256_before": "69261b51b303c7393b8920a5e345731c8ec6f02edef2506b4354826ec32acf92",
+      "bytes_before": 9130,
+      "sha256_after": "2209d247bd9768751f81d001c689b317befba0b08fe1ab2ed4c73ac9930d55fa",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/build_accuracy_finetune_notebook.py",
+      "new": "02_stage2_humming_qbh/scripts/notebook_builders/build_accuracy_finetune_notebook.py",
+      "sha256_before": "4979681d0f7b31c3718c77752a15a606ca78bcf9a1004fdf52605e71ad2f9fe2",
+      "bytes_before": 5656,
+      "sha256_after": "630f2798d02c7510cfb41e3f946132d18fa0bb81c248679a072bc2ccdfc7f46f",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/build_final_solution_notebooks.py",
+      "new": "02_stage2_humming_qbh/scripts/notebook_builders/build_final_solution_notebooks.py",
+      "sha256_before": "78f6fa0a70e15c80b7e17e009f08898874469c2667359c073de998c6f53fa7dc",
+      "bytes_before": 6678,
+      "sha256_after": "02d23ecb21037a043a183bfb2f349650ef66211fe60fa0104e0ccc73fb8e2e6c",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/build_kaggle_ready_notebook.py",
+      "new": "02_stage2_humming_qbh/scripts/notebook_builders/build_kaggle_ready_notebook.py",
+      "sha256_before": "2c09451c7ca0d7fd1e7e0b0367751834a564b2c935b5e3bc5bd4547d1c4bba90",
+      "bytes_before": 7914,
+      "sha256_after": "949252de7d36b5cd6c1c4b5aedddcb2152b7c0558a6fc2210e8944a8599f7f9e",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/build_local_4gb_notebook.py",
+      "new": "02_stage2_humming_qbh/scripts/notebook_builders/build_local_4gb_notebook.py",
+      "sha256_before": "8fdd31128774592c7fc3496b18205186e1e12314ddc99f7859293dd39a59a925",
+      "bytes_before": 18841,
+      "sha256_after": "ee127afb5ddff1489bcfc20e9610c4491eb25c77d708631d6573200de4a9f788",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/build_local_evaluation_notebook.py",
+      "new": "02_stage2_humming_qbh/scripts/notebook_builders/build_local_evaluation_notebook.py",
+      "sha256_before": "aef3fada122abe07dbd7cb707ad2328caaf9128ac1aec4135abf7637e660849f",
+      "bytes_before": 32688,
+      "sha256_after": "b858cb2f7e59bdb98c33ce406846a1955d999d73f5c6c9462908e9fe10ba971c",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/build_retrieval_ablation_notebook.py",
+      "new": "02_stage2_humming_qbh/scripts/notebook_builders/build_retrieval_ablation_notebook.py",
+      "sha256_before": "c7057f609f6f8de33da05844d96cac72687252273f02af0ea7a51fdd3783e0f8",
+      "bytes_before": 3721,
+      "sha256_after": "eb32f7532c3fc27a9e1f5a6fd78d38f5572c5b3d7e448289d11eded9ebb7058c",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/build_retrieval_candidate_ablation_notebook.py",
+      "new": "02_stage2_humming_qbh/scripts/notebook_builders/build_retrieval_candidate_ablation_notebook.py",
+      "sha256_before": "67c0e5b7fe6371a2cef5577557d78ab03a1457a14468456bf3b30644ea8276a9",
+      "bytes_before": 22383,
+      "sha256_after": "f65b416683c0db574a878f93fdd20c85303d13ca4ec93a2549030f52c0a58dc0",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/final_solution_runtime.py",
+      "new": "02_stage2_humming_qbh/scripts/notebook_builders/templates/final_solution_runtime.py",
+      "sha256_before": "4a8a2e95ff9483287eb9de9d9adf1e7fc71747f846c3f6fdef486ca841aad813",
+      "bytes_before": 42796,
+      "sha256_after": "4a8a2e95ff9483287eb9de9d9adf1e7fc71747f846c3f6fdef486ca841aad813",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/RESEARCH_EXPERIMENTS.md",
+      "new": "02_stage2_humming_qbh/docs/RESEARCH_EXPERIMENTS.md",
+      "sha256_before": "c983636b0cbf5c2eca4df14ace2988c35c0cc386648e2d2b19eae958377adf5d",
+      "bytes_before": 6131,
+      "sha256_after": "001620bcd1389da4cd7f44c15c56bd1b4238053c8be463f2c1dab898a199058a",
+      "content_updated": true
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/cmc_curve.png",
+      "new": "02_stage2_humming_qbh/reports/figures/cmc_curve.png",
+      "sha256_before": "617ea06f92c55c74a2d20fe73f3077b2694731ef360c9ccf541eac066e8a172a",
+      "bytes_before": 109357,
+      "sha256_after": "617ea06f92c55c74a2d20fe73f3077b2694731ef360c9ccf541eac066e8a172a",
+      "content_updated": false
+    },
+    {
+      "old": "02_stage2_humming_qbh/notebooks/qbh_final_v5_kaggle_bundle.zip",
+      "new": "02_stage2_humming_qbh/dist/qbh_final_v5_kaggle_bundle.zip",
+      "sha256_before": "2a32a26c462fdd00c1a60b9b884cc199aaac5f04ef2eb6768076c757f372c51c",
+      "bytes_before": 82376,
+      "sha256_after": "172d524d688485ef5a89094773da587b54ea09ac83e9ef0cba3dba8bcc7cb6f0",
+      "content_updated": true
+    }
+  ],
+  "deletions": [
+    {
+      "path": "scratch_inspect.py",
+      "kind": "file",
+      "bytes": 521,
+      "sha256": "49cca05302741cd72ff677a42ea9b57f34e140c8042d70967142f5ddf65afb1a",
+      "reason": "Temporary notebook inspection output; no runtime references."
+    },
+    {
+      "path": "scratch_dump.txt",
+      "kind": "file",
+      "bytes": 59394,
+      "sha256": "51f8eedd0659247094dc85868e96a465b57e38171a6d7d7be154dccb9d7fd472",
+      "reason": "Temporary notebook inspection output; no runtime references."
+    },
+    {
+      "path": "01_stage1_cover_song_csi/src/__pycache__",
+      "kind": "directory",
+      "files": 8,
+      "bytes": 63881,
+      "reason": "Regenerable Python bytecode cache."
+    },
+    {
+      "path": "01_stage1_cover_song_csi/src/coverhunter/__pycache__",
+      "kind": "directory",
+      "files": 7,
+      "bytes": 65163,
+      "reason": "Regenerable Python bytecode cache."
+    },
+    {
+      "path": "01_stage1_cover_song_csi/src/coverhunter/module/__pycache__",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 75469,
+      "reason": "Regenerable Python bytecode cache."
+    },
+    {
+      "path": "02_stage2_humming_qbh/tests/__pycache__",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 44791,
+      "reason": "Regenerable Python bytecode cache."
+    },
+    {
+      "path": "checkpoints",
+      "kind": "empty_directory",
+      "bytes": 0,
+      "reason": "Empty duplicate directory; stage checkpoints stay in place."
+    }
+  ],
+  "protected_before": {
+    "01_stage1_cover_song_csi/datasets": {
+      "files": 194,
+      "bytes": 529285426
+    },
+    "01_stage1_cover_song_csi/checkpoints": {
+      "files": 6,
+      "bytes": 236502610
+    },
+    "02_stage2_humming_qbh/datasets": {
+      "files": 6595,
+      "bytes": 4096651985
+    },
+    "02_stage2_humming_qbh/datasets_unused": {
+      "files": 28804,
+      "bytes": 2782782161
+    },
+    "02_stage2_humming_qbh/checkpoints": {
+      "files": 10,
+      "bytes": 533041392
+    },
+    "02_stage2_humming_qbh/runs": {
+      "files": 44,
+      "bytes": 116552195
+    },
+    "02_stage2_humming_qbh/cache": {
+      "files": 6646,
+      "bytes": 1783962455
+    }
+  },
+  "protected_after": {
+    "01_stage1_cover_song_csi/datasets": {
+      "files": 194,
+      "bytes": 529285426
+    },
+    "01_stage1_cover_song_csi/checkpoints": {
+      "files": 6,
+      "bytes": 236502610
+    },
+    "02_stage2_humming_qbh/datasets": {
+      "files": 6595,
+      "bytes": 4096651985
+    },
+    "02_stage2_humming_qbh/datasets_unused": {
+      "files": 28804,
+      "bytes": 2782782161
+    },
+    "02_stage2_humming_qbh/checkpoints": {
+      "files": 10,
+      "bytes": 533041392
+    },
+    "02_stage2_humming_qbh/runs": {
+      "files": 44,
+      "bytes": 116552195
+    },
+    "02_stage2_humming_qbh/cache": {
+      "files": 6646,
+      "bytes": 1783962455
+    }
+  },
+  "validation": {
+    "compiled_notebook_cells": 228,
+    "protected_inventory_unchanged": true,
+    "moves_verified": 31,
+    "cleanup_targets_verified": 7,
+    "v5_regression_tests_run": 23,
+    "v5_regression_tests_passed": 21,
+    "v5_regression_tests_skipped": 2,
+    "builders_executed_in_temporary_copy": 5,
+    "builder_paths_verified": 8,
+    "root_discovery_checks": 6,
+    "documentation_links_verified": true,
+    "unchanged_notebooks": [
+      "02_stage2_humming_qbh/notebooks/kaggle/train/conformer_bytehum_qbh_final_train_kaggle.ipynb",
+      "02_stage2_humming_qbh/notebooks/kaggle/evaluate/conformer_bytehum_qbh_final_evaluation.ipynb",
+      "02_stage2_humming_qbh/notebooks/templates/conformer_bytehum_qbh_final_train.ipynb",
+      "02_stage2_humming_qbh/notebooks/kaggle/archive/conformer_bytehum_qbh_kaggle.ipynb",
+      "02_stage2_humming_qbh/notebooks/kaggle/archive/conformer_bytehum_qbh_evaluation_kaggle.ipynb",
+      "02_stage2_humming_qbh/notebooks/local_4gb/train/conformer_bytehum_qbh_local_4gb.ipynb",
+      "02_stage2_humming_qbh/notebooks/local_4gb/train/conformer_bytehum_qbh_accuracy_finetune_local_4gb.ipynb",
+      "02_stage2_humming_qbh/notebooks/local_4gb/evaluate/conformer_bytehum_qbh_evaluation_local_4gb.ipynb",
+      "02_stage2_humming_qbh/notebooks/local_4gb/experiments/conformer_bytehum_qbh_candidate_ablation_local_4gb.ipynb",
+      "02_stage2_humming_qbh/notebooks/local_4gb/experiments/conformer_bytehum_qbh_retrieval_ablation_local_4gb.ipynb"
+    ]
+  },
+  "new_files": [
+    ".gitignore",
+    "docs/README.md",
+    "docs/maintenance/FOLDER_LAYOUT.md",
+    "docs/maintenance/folder_migration_2026-10-16.json",
+    "docs/maintenance/layout_validation_2026-10-16.json",
+    "02_stage2_humming_qbh/README.md",
+    "02_stage2_humming_qbh/notebooks/README.md",
+    "02_stage2_humming_qbh/notebooks/colab/README.md",
+    "02_stage2_humming_qbh/scripts/README.md",
+    "02_stage2_humming_qbh/dist/README.md"
+  ],
+  "updated_existing_references": [
+    "README.md",
+    "01_stage1_cover_song_csi/README.md",
+    "02_stage2_humming_qbh/experiments/retrieval_ablation.py",
+    "02_stage2_humming_qbh/tests/test_final_solution.py",
+    "02_stage2_humming_qbh/tests/test_kaggle_ready_notebook.py",
+    "02_stage2_humming_qbh/tests/test_local_4gb_notebook.py",
+    "02_stage2_humming_qbh/tests/test_local_evaluation_notebook.py",
+    "02_stage2_humming_qbh/tests/test_notebook_research.py",
+    "02_stage2_humming_qbh/tests/test_retrieval_ablation.py",
+    "02_stage2_humming_qbh/reports/FINAL_SOLUTION.md",
+    "02_stage2_humming_qbh/reports/KAGGLE_TRAIN_READY.md",
+    "02_stage2_humming_qbh/reports/architecture/ARCHITECTURE_NOTES.md"
+  ]
+}

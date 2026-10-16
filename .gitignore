@@ -1,0 +1,195 @@
+# ==============================================================================
+# .gitignore for PBL6 (Music Information Retrieval: Cover Song & Humming QBH)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Datasets & Raw / Processed Audio (Dữ liệu âm thanh lớn)
+# ------------------------------------------------------------------------------
+# Audio formats
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+*.aac
+*.wma
+*.mid
+*.midi
+*.pv
+*.silent
+
+# Video formats
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Large data formats & tabular datasets
+*.parquet
+*.arrow
+*.feather
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# Specific dataset directories & archives in project
+datasets.zip
+**/datasets_unused/
+**/2_music_database/
+**/covers80/
+**/datacos/
+**/dataset_split/train/
+**/dataset_split/val/
+**/dataset_split/test/
+**/raw_data/
+**/dataset_raw/
+
+# Preserve dataset scripts, metadata configs, and folder keepers
+!**/datasets/*.py
+!**/datasets/*.json
+!**/datasets/*.csv
+!**/dataset_split/*.json
+!**/dataset_split/*.csv
+!**/datasets/**/.gitkeep
+!**/datasets/**/README.md
+
+# ------------------------------------------------------------------------------
+# 2. Model Weights & Checkpoints (Trọng số mô hình - File dung lượng lớn)
+# ------------------------------------------------------------------------------
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.onnx
+*.pkl
+*.pickle
+*.joblib
+
+# Ignore all checkpoint contents but keep directory structure
+checkpoints/*
+**/checkpoints/*
+**/checkpoints/**/*
+!**/checkpoints/**/
+!**/checkpoints/**/.gitkeep
+**/pretrain_model/
+**/pt_model/
+
+# ------------------------------------------------------------------------------
+# 3. Cache & Extracted Feature Stores (Bộ nhớ đệm & Vector Index)
+# ------------------------------------------------------------------------------
+cache/
+**/cache/
+**/cqt_cache/
+**/evaluation_features/
+*.index
+*.nbc
+*.nbi
+
+# ------------------------------------------------------------------------------
+# 4. Training Runs, Backups & Build Bundles
+# ------------------------------------------------------------------------------
+runs/
+**/runs/
+backups/
+**/backups/
+dist/*.zip
+dist/*.tar*
+
+# ------------------------------------------------------------------------------
+# 5. Compressed Archives (File nén dung lượng lớn)
+# ------------------------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.gz
+*.bz2
+
+# ------------------------------------------------------------------------------
+# 6. Python & Environment
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 7. Jupyter Notebooks
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# ------------------------------------------------------------------------------
+# 8. Secrets, Credentials & Environment Variables (Bảo mật tài khoản)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+kaggle.json
+credentials.json
+client_secret*.json
+*.pem
+*.key
+
+# ------------------------------------------------------------------------------
+# 9. Logs & Experiment Trackers
+# ------------------------------------------------------------------------------
+*.log
+logs/
+wandb/
+lightning_logs/
+tensorboard/
+
+# ------------------------------------------------------------------------------
+# 10. IDE, Office Temporary & Operating System Files
+# ------------------------------------------------------------------------------
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains (PyCharm, etc.)
+.idea/
+
+# Office temporary lock files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# OS specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini

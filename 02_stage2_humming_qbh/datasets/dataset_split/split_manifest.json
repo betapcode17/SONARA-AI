@@ -1,0 +1,1802 @@
+{
+  "2 Unlimited - Get Ready For This": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 34
+  },
+  "21. El Perdón - Nicky Jam y Enrique Iglesias (Official Music": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 18
+  },
+  "24kGoldn - Mood ft. iann dior": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 9
+  },
+  "5 Seconds of Summer - Easier": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "ACDC - Highway to Hell (lyrics)": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 9
+  },
+  "ANDMESH - HANYA RINDU": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Accept - Amamos La vida": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 31
+  },
+  "Ace of Base - Beautiful Life": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 15
+  },
+  "Adam Clayton - Mission Impossible": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 38
+  },
+  "Adele - Lovesong": {
+    "split": "train",
+    "num_fragments": 5,
+    "num_references": 5,
+    "num_hummings": 27
+  },
+  "Adele - Send My Love (To Your New Lover)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 12
+  },
+  "Adele - Skyfall (Official Lyric Video)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 35
+  },
+  "Adele - Someone Like You": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 20
+  },
+  "Afric Simone - Hafanana": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 38
+  },
+  "Alan Walker, Sabrina Carpenter & Farruko - On My Way": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 8
+  },
+  "Alexiane - A Million on My Soul (From Valerian and the City": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 22
+  },
+  "Ali Gatie - It's You (Official Lyrics Video)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "All I Ask": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Amy Winehouse - Back To Black": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Angus & Julia Stone - Just A Boy": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Ariana Grande - God is a woman": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 13
+  },
+  "Ariana Grande - One Last Time": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Ariana Grande - Side To Side (Lyrics) ft. Nicki Minaj": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 8
+  },
+  "Ariana Grande - break up with your girlfriend, i'm bored": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Ariana Grande - breathin": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 21
+  },
+  "Ava Max - Kings & Queens": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Ava Max - Sweet but Psycho": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 19
+  },
+  "Avril Lavigne - Head Above Water": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 8
+  },
+  "BLACKPINK - 'Ice Cream (with Selena Gomez)' MV": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 21
+  },
+  "BLACKPINK - How You Like That": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 2,
+    "num_hummings": 15
+  },
+  "BTS (방탄소년단) 'Dynamite' Official MV": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "BTS (방탄소년단) 'FAKE LOVE' Official MV": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "BTS (방탄소년단) '작은 것들을 위한 시 (Boy With Luv) (feat. Halsey)' Offi": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 3
+  },
+  "Barber of Seville - by Pietro Spagnoli (lyrics)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 21
+  },
+  "Beatsteaks - Hand In Hand": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Bebe Rexha - I'm A Mess": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "Bebe Rexha - Meant to Be (feat. Florida Georgia Line)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 11
+  },
+  "Bee Gees - Stayin' Alive": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 9
+  },
+  "Billie Eilish - No Time To Die": {
+    "split": "train",
+    "num_fragments": 5,
+    "num_references": 5,
+    "num_hummings": 24
+  },
+  "Billie Eilish - when the party's over": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Billie Eilish - wish you were gay": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Billie Eilish, Khalid - lovely": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 18
+  },
+  "Blue Featuring Elton John - Sorry Seems To Be The Hardest Wo": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 59
+  },
+  "Bobby Helms - jingle bell rock": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Bobby Vinton - Mr. Lonely": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 12
+  },
+  "Boney M. - Ma Baker (Sopot Festival 1979)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 33
+  },
+  "Busta Rhymes, Mariah Carey - I Know What You Want (Official": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 21
+  },
+  "Calum Scott - You Are The Reason": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Camila Cabello - Consequences": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Camila Cabello - Consequences (orchestra)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 18
+  },
+  "Candy Dulfer & David A. Stewart - Lily Was Here": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 17
+  },
+  "Carly Rae Jepsen - I Really Like You": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Charlie Puth - Done For Me (feat. Kehlani)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Charlie Puth - We Don't Talk Anymore (feat. Selena Gomez)": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 28
+  },
+  "Cher - Strong Enough": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 14
+  },
+  "Coldplay - A Sky Full Of Stars": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 14
+  },
+  "Coldplay - The Scientist (Official 4K Video)": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 14
+  },
+  "Coldplay - Viva La Vida": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Conan Gray - Heather": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 19
+  },
+  "Céline Dion - My Heart Will Go On (from the 2007 DVD Live In": {
+    "split": "train",
+    "num_fragments": 7,
+    "num_references": 7,
+    "num_hummings": 37
+  },
+  "DJ Khaled - No Brainer ft. Justin Bieber, Chance the Rapper,": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Daft Punk - Get Lucky ft. Pharrell Williams, Nile Rodgers": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 40
+  },
+  "David Guetta & Sia - Flames": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "David Guetta feat Anne-Marie - Don't Leave Me Alone": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 9
+  },
+  "Dean Lewis - Be Alright": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Desireless - Voyage Voyage (Official HD Video)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 34
+  },
+  "Doja Cat - Say So": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 16
+  },
+  "Dotan - Numb": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 13
+  },
+  "Dua Lipa - Break My Heart": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Ed Sheeran - Beautiful People (feat. Khalid)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Ed Sheeran - Castle On The Hill": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 11
+  },
+  "Ed Sheeran - I See Fire (Music Video)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 19
+  },
+  "Ed Sheeran - Perfect": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Ed Sheeran - Photograph": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "Edvard Grieg - Solveig's Song": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 18
+  },
+  "Edvard Grieg Peer Gynt - Morning Mood": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 18
+  },
+  "Ellie Goulding - Love Me Like You Do": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 16
+  },
+  "Elton John - Believe": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Elvis Presley - Can't Help Falling In Love": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 37
+  },
+  "Elvis Presley Love Me Tender": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 38
+  },
+  "Enya - Only Time (Official 4K Music Video)": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 28
+  },
+  "Eurythmics, Annie Lennox, Dave Stewart - Sweet Dreams (Are M": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 42
+  },
+  "Evanescence - My Immortal (Official HD Music Video)": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 19
+  },
+  "Fetty Wap - Trap Queen Prod. By Tony Fadd": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Fleetwood Mac - Dreams [with lyrics]": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 14
+  },
+  "Fly Me To The Moon (2008 Remastered)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 27
+  },
+  "Frank Sinatra - Jingle Bells": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 33
+  },
+  "Frank Sinatra - Let It Snow! Let It Snow! Let It Snow!": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 12
+  },
+  "Freemasons feat. Sophie Ellis-Bextor - Heartbreak (Make Me A": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 20
+  },
+  "G-Eazy x Bebe Rexha - Me, Myself & I": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Game of Thrones Violin Cover": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 30
+  },
+  "Geri Halliwell - It's Raining Men": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 18
+  },
+  "Gloria Gaynor - I Will Survive": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 33
+  },
+  "HAUSER & Ksenija Sidorova - Libertango": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 27
+  },
+  "Harry Styles - Adore You (Official Video – Extended Version)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Harry Styles - Lights Up": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 21
+  },
+  "Henry Dubois - Marriage D´Amour": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 10
+  },
+  "Imagine Dragons - Natural": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "Imagine Dragons - Whatever It Takes": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 8
+  },
+  "Iyeoka – Simply Falling": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 6
+  },
+  "JP Saxe - If the World Was Ending ft. Julia Michaels": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "James Bay - Let It Go": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Jason Derulo - Colors [Coca-Cola Anthem for the 2018 FIFA Wo": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Jason Derulo - Want To Want Me": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Jessie J - Flashlight (from Pitch Perfect 2)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Joe_Cocker_-_You_Can_Leave_Your_Hat_On_(HQ).mp4": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 31
+  },
+  "Joel Corry x MNEK - Head & Heart": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "John Williams - The Imperial March (Star Wars)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 19
+  },
+  "Jonas Brothers - Sucker": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 12
+  },
+  "Juanes - La Camisa Negra": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 46
+  },
+  "Julia Michaels - Heaven": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Junkie XL, Elvis Presley - A Little Less Conversation (Offic": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 4
+  },
+  "Justin Bieber & benny blanco - Lonely": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 11
+  },
+  "Justin Bieber - Intentions ft. Quavo": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 7
+  },
+  "Justin Bieber - Love Yourself (PURPOSE The Movement)": {
+    "split": "train",
+    "num_fragments": 5,
+    "num_references": 5,
+    "num_hummings": 23
+  },
+  "Justin Timberlake - Say Something ft. Chris Stapleton": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 7
+  },
+  "KALEO - Way Down We Go": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 10
+  },
+  "Katy Perry - I Kissed A Girl": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 17
+  },
+  "Kehlani - Nights Like This (feat. Ty Dolla $ign)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Kylie Minogue - Can't Get You Out Of My Head": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 22
+  },
+  "Labrinth - Jealous": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Lady Gaga - Alejandro": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 41
+  },
+  "Lady Gaga - Bad Romance": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 36
+  },
+  "Lady Gaga - Poker Face": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 11
+  },
+  "Lady Gaga - Stupid Love": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Lady Gaga, Bradley Cooper - Shallow (from A Star Is Born)": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 33
+  },
+  "Lana Del Rey - Summertime Sadness": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 15
+  },
+  "Lana Del Rey - Young and Beautiful": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 8
+  },
+  "Lauv & Troye Sivan - i'm so tired... [Official Visualizer]": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Lewis Capaldi - Before You Go": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "LiSA - Crossing Field": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 7
+  },
+  "Lil Peep & XXXTENTACION - Falling Down": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Linkin Park - In The End (Tommee Profitt & Mellen Gi Remix,": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 33
+  },
+  "Lipps, Inc. - Funkytown": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 37
+  },
+  "Love Is Blue (Remastered)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 50
+  },
+  "Love Theme From The Godfather": {
+    "split": "train",
+    "num_fragments": 5,
+    "num_references": 5,
+    "num_hummings": 76
+  },
+  "Ludwig van Beethoven - Für Elise": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 14
+  },
+  "Lukas Graham - 7 Years": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 2,
+    "num_hummings": 15
+  },
+  "Madison Beer - Selfish": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 16
+  },
+  "Marcos & Belutti - Aquele 1% part. Wesley Safadão (Clipe Ofi": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Mark Ronson - Uptown Funk ft. Bruno Mars": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Maroon 5 - Don't Wanna Know": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 16
+  },
+  "Maroon 5 - Girls Like You ft. Cardi B": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 21
+  },
+  "Maroon 5 - Memories": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Maroon 5 - Sugar": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Marshmello - Here With Me Feat. CHVRCHES [Official Lyric Vid": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Melanie Martinez - Show & Tell": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Mike Perry - The Ocean ft. Shy Martin": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Mozart - Rondo Alla Turca (Turkish March)": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 17
+  },
+  "Mozart Eine kleine Nachtmusik, K. 525 IV. Rondo. Allegro": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 13
+  },
+  "Nelly - Just A Dream": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Niccolo Paganini - La campanella": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 38
+  },
+  "Niccolò Paganini - Caprice No. 24": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 30
+  },
+  "No Doubt - Don't Speak (Official 4K Music Video)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 12
+  },
+  "No Game No Life Opening This Game by Konomi Suzuki": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "One Direction - Drag Me Down": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 24
+  },
+  "Panic! At The Disco - High Hopes": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Panic! At The Disco Victorious": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Paul Mauriat - Minuetto": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 4
+  },
+  "Pink Sweat$ - At My Worst": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Post Malone - Goodbyes ft. Young Thug (Rated R)": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 17
+  },
+  "Prologue": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 23
+  },
+  "Pyotr Ilyich Tchaikovsky - Swan Lake - 39 No. 21 Danse napol": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 26
+  },
+  "Pyotr Ilyich Tchaikovsky Nina Kaptsova Dance of the Sugar Pl": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 22
+  },
+  "Requiem for a Dream - Best Trailer Music Ever!": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 12
+  },
+  "Roddy Ricch - The Box": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 7
+  },
+  "Sam Smith - Diamonds": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 12
+  },
+  "Sam Smith - How Do You Sleep": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 9
+  },
+  "Sam Smith - Writing's On The Wall (from Spectre)": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 22
+  },
+  "Sam Smith, Normani - Dancing With A Stranger": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Secret Garden - Song From A Secret Garden (Live at Kilden 20": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 30
+  },
+  "Selena Gomez - Lose You To Love Me": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 6
+  },
+  "Shawn Mendes - In My Blood": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Shawn Mendes - Stitches": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Shawn Mendes - Treat You Better": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Shawn Mendes, Camila Cabello - Señorita": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Sia - Chandelier": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Sia - Cheap Thrills (Official Lyric Video) ft. Sean Paul": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "Sia - The Greatest": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Simon & Garfunkel - The Sounds of Silence": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 11
+  },
+  "Strangers In The Night (2008 Remastered)": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 16
+  },
+  "Survivor - Eye Of The Tiger (Official HD Video)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "TONES AND I - DANCE MONKEY": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "Tate McRae - you broke me first": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Taylor Swift - Lover": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "Taylor Swift - Wildest Dreams": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Taylor Swift - cardigan": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Tchaikovsky - The Nutcracker, II. March": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 38
+  },
+  "The Beatles - Come Together": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "The Chainsmokers - Call You Mine ft. Bebe Rexha": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 7
+  },
+  "The Chainsmokers - Closer (Lyric) ft. Halsey": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "The Greatest Showman Cast - This Is Me": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "The Hanging Tree’ James Newton Howard ft. Jennifer Lawrence": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 9
+  },
+  "The Verve - Bitter Sweet Symphony": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 13
+  },
+  "The Weeknd - Blinding Lights": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 16
+  },
+  "The Weeknd - Starboy ft. Daft Punk ft. Daft Punk": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Vanessa Carlton - A Thousand Miles": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Vella - I See Red (Everybody Loves An Outlaw Cover)": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Vivaldi Four Seasons Winter (L'Inverno), original version. F": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 7
+  },
+  "Wonderful Life - Black": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 19
+  },
+  "ZAYN - PILLOWTALK": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 9
+  },
+  "Zedd, Maren Morris, Grey - The Middle": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "[1976] Rocky - Bill Conti - 01 - Gonna Fly Now": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "aLIEz": {
+    "split": "train",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "eruption - one way ticket": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 35
+  },
+  "gnash - i hate u, i love u ft. olivia o'brien (music video)": {
+    "split": "train",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "twenty one pilots - Level of Concern": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Édith Piaf - La Vie en Rose": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 16
+  },
+  "Евгений Дога - Вальс (GloriaMusicVideo)": {
+    "split": "train",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 17
+  },
+  "Музыка из фильма. Свой среди чужих, чужой среди своих": {
+    "split": "train",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 21
+  },
+  "ABBA - Dancing Queen": {
+    "split": "val",
+    "num_fragments": 5,
+    "num_references": 5,
+    "num_hummings": 71
+  },
+  "Ace of Base - All That She Wants": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 22
+  },
+  "Adele - Rolling in the Deep": {
+    "split": "val",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 53
+  },
+  "Alec Benjamin - Let Me Down Slowly": {
+    "split": "val",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 19
+  },
+  "Arabesque - Midnight dancer": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 28
+  },
+  "BBC Sherlock Theme Song": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 24
+  },
+  "Baccara - Yes Sir, I Can Boogie (Starparade 02.06.1977)": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 27
+  },
+  "Bach - Badinerie - BWV 1067 Suite": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 8
+  },
+  "Beyoncé - Halo": {
+    "split": "val",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 16
+  },
+  "Billie Eilish - Therefore I Am": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Billie Eilish - bad guy": {
+    "split": "val",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 13
+  },
+  "Billie Eilish - bury a friend": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 12
+  },
+  "Billie Eilish - everything i wanted": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 9
+  },
+  "Can't Take My Eyes off of You": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 35
+  },
+  "Coldplay - Hymn For The Weekend": {
+    "split": "val",
+    "num_fragments": 5,
+    "num_references": 5,
+    "num_hummings": 25
+  },
+  "Crazy Frog - Axel F": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 20
+  },
+  "DJ Snake - Let Me Love You ft. Justin Bieber": {
+    "split": "val",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 13
+  },
+  "Dan + Shay, Justin Bieber - 10,000 Hours": {
+    "split": "val",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "Deep Purple - Smoke on the Water": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 21
+  },
+  "Dua Lipa - Levitating Featuring DaBaby": {
+    "split": "val",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 18
+  },
+  "Gorillaz - Feel Good Inc": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 19
+  },
+  "Halsey - Without Me": {
+    "split": "val",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "Jennifer Lopez - Brave": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 19
+  },
+  "Joe Dassin - A toi": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 14
+  },
+  "Joe Dassin - Salut": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 24
+  },
+  "Justin Bieber - Holy ft. Chance The Rapper": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Justin Timberlake - CAN'T STOP THE FEELING! (from DreamWorks": {
+    "split": "val",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Kiiara - Gold": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Lauv ft. Julia Michaels - There's No Way": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Lil Nas X - Old Town Road (Official Movie) ft. Billy Ray Cyr": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Love Theme From Flashdance": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 16
+  },
+  "Marshmello & Anne-Marie - FRIENDS (Music Video) OFFICIAL FRI": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 11
+  },
+  "Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit)": {
+    "split": "val",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 18
+  },
+  "Niall Horan - This Town (Official Lyric Video)": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Ninelie - Kabaneri of the Iron Fortress ED + Lyrics": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 6
+  },
+  "Powfu - death bed (coffee for your head) ft. beabadoobee": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "R. City - Locked Away ft. Adam Levine": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Rihanna - Work (Explicit) ft. Drake": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 7
+  },
+  "Selena Gomez - Kill Em With Kindness": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 7
+  },
+  "Shawn Mendes, Justin Bieber - Monster": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Swan Lake, Tchaikovsky - Dance of the Little Swans": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 21
+  },
+  "Teddy Swims - What's Going On (Marvin Gaye Cover)": {
+    "split": "val",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 20
+  },
+  "Tokyo Ghoul Opening Unravel by TK from Ling Toshite Sigure": {
+    "split": "val",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Wiz Khalifa - See You Again ft. Charlie Puth Furious 7 Sound": {
+    "split": "val",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Zedd - I Want You To Know ft. Selena Gomez": {
+    "split": "val",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 12
+  },
+  "5 Seconds of Summer - Youngblood": {
+    "split": "test",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Alan Walker - Faded": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Alesso - Heroes (we could be) ft. Tove Lo": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Alphaville - Forever Young ~Official Video": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 22
+  },
+  "Ariana Grande & Justin Bieber - Stuck with U": {
+    "split": "test",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 16
+  },
+  "Ariana Grande - 7 rings": {
+    "split": "test",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "Ariana Grande - Dangerous Woman": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Ariana Grande - thank u, next": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 8
+  },
+  "Camila Cabello - Never Be the Same": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Dua Lipa - Don't Start Now": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Eagles - Hotel California": {
+    "split": "test",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 19
+  },
+  "Ed Sheeran & Justin Bieber - I Don't Care": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Edith Piaf - Non, Je ne regrette rien": {
+    "split": "test",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 17
+  },
+  "Et Si Tu N'Existais Pas - Joe Dassin Lyrics": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 41
+  },
+  "Haddaway - What Is Love (Official 4K Video)": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 57
+  },
+  "Historia de un amor - Francis Goya": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 41
+  },
+  "Hozier - Take Me To Church": {
+    "split": "test",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 24
+  },
+  "Idina Menzel, AURORA - Into the Unknown (Frozen 2)": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 14
+  },
+  "J Balvin, Dua Lipa, Bad Bunny, Tainy - UN DIA (ONE DAY)": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "James Arthur - Say You Won't Let Go": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Jason Derulo & Jawsh 685 - Savage Love (Studio Music Video)": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 12
+  },
+  "Jessica Jay - Casablanca": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 52
+  },
+  "Justin Bieber - Sorry (PURPOSE The Movement)": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Khalid - Talk": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 12
+  },
+  "Lewis Capaldi - Someone You Loved": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 18
+  },
+  "MKTO - Classic": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "Marshmello ft. Bastille - Happier": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Meghan Trainor - NO": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 8
+  },
+  "Mozart - Symphony No. 40 in G minor, K. 550 [complete]": {
+    "split": "test",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 17
+  },
+  "Naomi Scott - Speechless (from Aladdin)": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 21
+  },
+  "Numb [4K UPGRADE] – Linkin Park": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 16
+  },
+  "Post Malone, Swae Lee - Sunflower (Spider-Man Into the Spide": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 23
+  },
+  "Sting - Shape of My Heart": {
+    "split": "test",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 18
+  },
+  "Taylor Swift - Blank Space": {
+    "split": "test",
+    "num_fragments": 1,
+    "num_references": 1,
+    "num_hummings": 5
+  },
+  "The Black Eyed Peas - Where Is The Love": {
+    "split": "test",
+    "num_fragments": 4,
+    "num_references": 4,
+    "num_hummings": 22
+  },
+  "The Chainsmokers - Don't Let Me Down ft. Daya": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "The Greatest Showman Cast - A Million Dreams": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Theme From Schindler's List": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 18
+  },
+  "Weird Genius - Lathi (ft. Sara Fajira) Official Music Video": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "XXXTENTACION - SAD!": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 14
+  },
+  "Yesterday (Remastered 2009)": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 30
+  },
+  "Yuri!!! on Ice ユーリ!!! on ICE Opening History Maker": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "Zara Larsson, MNEK - Never Forget You": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 10
+  },
+  "benny blanco, Halsey & Khalid – Eastside": {
+    "split": "test",
+    "num_fragments": 3,
+    "num_references": 3,
+    "num_hummings": 15
+  },
+  "twenty one pilots Heathens (from Suicide Squad The Album)": {
+    "split": "test",
+    "num_fragments": 2,
+    "num_references": 2,
+    "num_hummings": 14
+  }
+}

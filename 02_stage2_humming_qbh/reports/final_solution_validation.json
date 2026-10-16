@@ -1,0 +1,38 @@
+{
+  "created_at_utc": "2026-10-16T02:15:20.129165+00:00",
+  "tests_run": 28,
+  "passed": 25,
+  "skipped": [
+    {
+      "test": "test_blocked_scores_match_naive_scores (test_final_solution.TorchTests.test_blocked_scores_match_naive_scores)",
+      "reason": "PyTorch not installed in this validation runtime"
+    },
+    {
+      "test": "test_triplet_losses_have_finite_gradients (test_final_solution.TorchTests.test_triplet_losses_have_finite_gradients)",
+      "reason": "PyTorch not installed in this validation runtime"
+    },
+    {
+      "test": "test_cpu_probe_updates_then_restores_weights_buffers_rng_and_optimizer (test_final_training_reliability.PreflightTorchTests.test_cpu_probe_updates_then_restores_weights_buffers_rng_and_optimizer)",
+      "reason": "PyTorch not installed in this validation runtime"
+    }
+  ],
+  "failures": 0,
+  "errors": 0,
+  "notebooks": [
+    {
+      "file": "notebooks/templates/conformer_bytehum_qbh_final_train.ipynb",
+      "sha256": "b4183046a61e956e04af26a17991b44a6bc6085232031e78485f8c38d502feb7",
+      "code_cells": 14,
+      "unresolved_globals": []
+    },
+    {
+      "file": "notebooks/kaggle/evaluate/conformer_bytehum_qbh_final_evaluation.ipynb",
+      "sha256": "55fc9fc34c09367a09d7ae2ead375ff66fa308187739da8a1bac887d14b02325",
+      "code_cells": 13,
+      "unresolved_globals": []
+    }
+  ],
+  "validation": "Compile/symbol analysis, protocol/inventory, fake checkpoint IO, NumPy positive selection and preflight AST checks",
+  "gpu_training_executed": false,
+  "nbformat_schema_validator_available": false
+}

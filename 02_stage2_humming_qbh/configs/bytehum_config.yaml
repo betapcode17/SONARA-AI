@@ -1,0 +1,70 @@
+# ==========================================================
+# CẤU HÌNH SIÊU THAM SỐ CHO HỆ THỐNG CONFORMER-BYTEHUM QBH
+# Đã sửa cho tương thích CoverHunter Pre-trained Backbone
+# ==========================================================
+
+data:
+  sample_rate: 16000             # CoverHunter pre-trained dùng 16kHz (không phải 22050!)
+  chunk_duration_sec: 10.0       # 10.0s theo Mục 2.1 của bài báo
+  hop_duration_sec: 3.0          # Bước nhảy 3.0s chồng lấn
+  cqt:
+    n_bins: 96                   # 8 quãng tám x 12 bins/octave (chuẩn CoverHunter, không phải 84!)
+    bins_per_octave: 12
+    fmin: 32.0                   # Tần số thấp nhất 32 Hz (chuẩn CoverHunter)
+    hop_size: 0.04               # Hop size 0.04s = 640 samples @ 16kHz (chuẩn CoverHunter)
+    mean_size: 3                 # Nén thời gian shorter(mean_size=3)
+    target_frames: 83            # ~83 frames chuẩn CoverHunter (không phải 431!)
+  augmentation:
+    grid_distortion:
+      enabled: true
+      freq_scale_range: [0.5, 1.5]
+      time_scale_range: [0.5, 1.5]
+      prob: 0.5
+    pitch_shift:
+      enabled: true
+      max_shift_bins: 6          # ±6 semitones
+      prob: 0.7
+    spec_augment:
+      enabled: true
+      freq_mask_param: 10        # Số bins tần số tối đa bị mask
+      time_mask_param: 10        # Số frames thời gian tối đa bị mask
+      num_freq_masks: 2
+      num_time_masks: 2
+      prob: 0.5
+
+model:
+  backbone: "coverhunter_conformer"
+  input_dim: 96                  # CoverHunter input_dim = 96 (không phải 84!)
+  embedding_dim: 128             # CoverHunter embed_dim = 128 (không phải 256!)
+  d_model: 128                   # encoder output_dims
+  n_conformer_blocks: 6          # 6 khối Conformer
+  dropout: 0.2
+  num_classes: 210               # Số bài hát trong tập train
+  num_proxies_per_class: 4       # L = 4 proxy vectors (Intro, Verse, Chorus, Outro)
+  lambda_grl: 0.2               # Trọng số Gradient Reversal Layer
+  freeze_frontend: true          # Đóng băng CMVN + Conv2d subsampling
+  num_blocks_to_freeze: 3        # Đóng băng 3/6 khối Conformer đầu tiên
+
+training:
+  optimizer: "adamw"             # AdamW tốt hơn Adam cho fine-tuning (có weight decay đúng)
+  learning_rate: 0.0001          # Peak LR cho OneCycleLR
+  min_learning_rate: 0.0000001   # LR tối thiểu cuối training
+  weight_decay: 0.0001           # L2 Regularization
+  batch_size: 16                 # Batch size phù hợp GPU 4GB VRAM
+  grad_accum_steps: 4            # 16 x 4 = 64 effective batch size
+  epochs: 30
+  margin: 0.2                    # Margin cho Triplet Loss L_lat
+  lambda_lac: 1.0                # Trọng số cho Classification Loss L_lac
+  lambda_lat: 1.0                # Trọng số cho Triplet Loss L_lat
+  lambda_domain: 0.2             # Trọng số cho Domain Loss L_domain
+  label_smoothing: 0.1           # Label smoothing cho classification loss (chống overfitting)
+  warmup_pct: 0.1                # 10% epochs đầu dùng warm-up
+  lr_schedule: "one_cycle"       # OneCycleLR scheduler
+  gradient_clip_norm: 1.0        # Gradient clipping
+  device: "cuda"
+
+evaluation:
+  top_k_list: [1, 5, 10, 20]
+  metric: "max_mean"
+  multi_key_shifts: [-3, -2, -1, 0, 1, 2, 3]
+  num_noise_songs_list: [0, 50, 100, 150, 200, 255]
