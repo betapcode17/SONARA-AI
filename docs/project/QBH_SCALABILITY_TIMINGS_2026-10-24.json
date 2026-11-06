@@ -1,0 +1,97 @@
+{
+  "checkpoint": "qbh_v3_inference.pt",
+  "checkpoint_sha256": "85d76048ba92cd1353036851f88b8c056f560a281949c5e8aa157ddc75aa47a9",
+  "gallery_songs": 90,
+  "gallery_vectors": 7567,
+  "dimension": 128,
+  "raw_vector_bytes": 3874304,
+  "audio_seconds": 23205.89136281179,
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "blas": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 4,
+      "prefix": "libscipy_openblas",
+      "filepath": "E:\\HOCKY7\\PBL6\\code\\core\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+      "version": "0.3.34.106.0",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell"
+    }
+  ],
+  "accuracy_evaluated": false,
+  "audio_encoding_evaluated": false,
+  "scope": "Warm cached scoring only; existing scorer versus concatenated exact MaxMean. Reference vectors serve as timing queries, not humming queries. No throughput, ANN, cold cache or end-to-end benchmark.",
+  "results": [
+    {
+      "query_chunks": 1,
+      "existing": {
+        "p50_ms": 2.851699999155244,
+        "p95_ms": 3.8099049999800623,
+        "repeats": 40
+      },
+      "concatenated_exact": {
+        "p50_ms": 0.24185000074794516,
+        "p95_ms": 0.3909749999365884,
+        "repeats": 40
+      },
+      "max_abs_score_error": 0.0
+    },
+    {
+      "query_chunks": 3,
+      "existing": {
+        "p50_ms": 3.5551000000850763,
+        "p95_ms": 5.4406599991125395,
+        "repeats": 40
+      },
+      "concatenated_exact": {
+        "p50_ms": 0.9887999985949136,
+        "p95_ms": 2.848279996760539,
+        "repeats": 40
+      },
+      "max_abs_score_error": 0.0
+    },
+    {
+      "query_chunks": 8,
+      "existing": {
+        "p50_ms": 3.899749999618507,
+        "p95_ms": 5.088175000310001,
+        "repeats": 40
+      },
+      "concatenated_exact": {
+        "p50_ms": 0.8835000007820781,
+        "p95_ms": 2.5959200011129724,
+        "repeats": 40
+      },
+      "max_abs_score_error": 5.960464477539063e-08
+    }
+  ],
+  "raw_memory_projection": [
+    {
+      "songs": 90,
+      "vectors": 7567,
+      "gib": 0.003608226776123047
+    },
+    {
+      "songs": 1000,
+      "vectors": 84078,
+      "gib": 0.04009140862358941
+    },
+    {
+      "songs": 10000,
+      "vectors": 840778,
+      "gib": 0.4009140862358941
+    },
+    {
+      "songs": 100000,
+      "vectors": 8407778,
+      "gib": 4.009140862358941
+    },
+    {
+      "songs": 1000000,
+      "vectors": 84077778,
+      "gib": 40.09140862358941
+    }
+  ]
+}

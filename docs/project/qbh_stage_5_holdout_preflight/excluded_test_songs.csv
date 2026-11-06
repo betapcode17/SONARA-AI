@@ -1,0 +1,10 @@
+﻿song_id,source_title,source_split,source_test_queries,query_hashes_seen_in_benchmark_artifacts,exclusion_reason
+04154c76eacfde72,Justin Bieber - Holy ft. Chance The Rapper,test,5,5,At least one query SHA256 appeared in prior benchmark outputs; exclude whole song.
+26803c35992f8280,BBC Sherlock Theme Song,test,24,24,At least one query SHA256 appeared in prior benchmark outputs; exclude whole song.
+2cf17d04acacd9df,Rihanna - Work (Explicit) ft. Drake,test,7,7,At least one query SHA256 appeared in prior benchmark outputs; exclude whole song.
+45ee58f8ae849a53,Wiz Khalifa - See You Again ft. Charlie Puth Furious 7 Sound,test,10,10,At least one query SHA256 appeared in prior benchmark outputs; exclude whole song.
+5f0afe55b9885e83,Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit),test,18,18,At least one query SHA256 appeared in prior benchmark outputs; exclude whole song.
+777e721176e34e09,ABBA - Dancing Queen,test,74,71,At least one query SHA256 appeared in prior benchmark outputs; exclude whole song.
+9a05e1b265672aed,Can_t Take My Eyes off of You,test,35,35,At least one query SHA256 appeared in prior benchmark outputs; exclude whole song.
+a2121158c82e27f6,Selena Gomez - Kill Em With Kindness,test,8,7,At least one query SHA256 appeared in prior benchmark outputs; exclude whole song.
+cda3fc3183608ae6,Lauv ft. Julia Michaels - There_s No Way,test,10,10,At least one query SHA256 appeared in prior benchmark outputs; exclude whole song.

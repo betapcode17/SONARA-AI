@@ -1,0 +1,67 @@
+<mxfile host="drawio-skill" agent="diagram-ir" version="3.0.0">
+  <diagram id="system" name="System">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="client_mic" value="User / Microphone (Humming Query 5-15s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="client_mic" data-kind="client" data-properties="{&quot;layer&quot;:&quot;presentation&quot;}" data-source-properties="{&quot;layer&quot;:&quot;presentation&quot;}" data-source-label="User / Microphone&#10;(Humming Query 5-15s)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\pbl6_qbh_architecture.ir.json&quot;}">
+          <mxGeometry x="60" y="80" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="web_frontend" value="Web Frontend (HTML5 / React Player)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="web_frontend" data-kind="frontend" data-properties="{&quot;layer&quot;:&quot;presentation&quot;}" data-source-properties="{&quot;layer&quot;:&quot;presentation&quot;}" data-source-label="Web Frontend&#10;(HTML5 / React Player)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\pbl6_qbh_architecture.ir.json&quot;}">
+          <mxGeometry x="290" y="80" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="api_gateway" value="FastAPI Backend Service (/api/qbh/search)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="api_gateway" data-kind="service" data-properties="{&quot;layer&quot;:&quot;api&quot;}" data-source-properties="{&quot;layer&quot;:&quot;api&quot;}" data-source-label="FastAPI Backend Service&#10;(/api/qbh/search)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\pbl6_qbh_architecture.ir.json&quot;}">
+          <mxGeometry x="520" y="80" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cqt_preprocessor" value="Audio Preprocessor (CQT 96 bins x 83 frames, In-RAM Cache)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="cqt_preprocessor" data-kind="service" data-properties="{&quot;layer&quot;:&quot;processing&quot;}" data-source-properties="{&quot;layer&quot;:&quot;processing&quot;}" data-source-label="Audio Preprocessor&#10;(CQT 96 bins x 83 frames, In-RAM Cache)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\pbl6_qbh_architecture.ir.json&quot;}">
+          <mxGeometry x="60" y="230" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="conformer_backbone" value="Conformer Backbone (CoverHunter) (6 Blocks, MHSA + Depthwise Conv, 9.91M params)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="conformer_backbone" data-kind="model" data-properties="{&quot;layer&quot;:&quot;ai_inference&quot;}" data-source-properties="{&quot;layer&quot;:&quot;ai_inference&quot;}" data-source-label="Conformer Backbone (CoverHunter)&#10;(6 Blocks, MHSA + Depthwise Conv, 9.91M params)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\pbl6_qbh_architecture.ir.json&quot;}">
+          <mxGeometry x="290" y="230" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dual_embeddings" value="Dual Representation (Global ASP 128D + Local Sequence 20x128D)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="dual_embeddings" data-kind="component" data-properties="{&quot;layer&quot;:&quot;ai_inference&quot;}" data-source-properties="{&quot;layer&quot;:&quot;ai_inference&quot;}" data-source-label="Dual Representation&#10;(Global ASP 128D + Local Sequence 20x128D)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\pbl6_qbh_architecture.ir.json&quot;}">
+          <mxGeometry x="520" y="230" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="scoring_engine" value="Scoring Engine V6.2 (Top-K Quantile Pooling 85% + Fused 75/25)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="scoring_engine" data-kind="service" data-properties="{&quot;layer&quot;:&quot;retrieval&quot;}" data-source-properties="{&quot;layer&quot;:&quot;retrieval&quot;}" data-source-label="Scoring Engine V6.2&#10;(Top-K Quantile Pooling 85% + Fused 75/25)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\pbl6_qbh_architecture.ir.json&quot;}">
+          <mxGeometry x="60" y="380" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gallery_database" value="Gallery Database (348 Songs) (Full Recordings + Demucs Vocal Stems)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="gallery_database" data-kind="database" data-properties="{&quot;layer&quot;:&quot;storage&quot;}" data-source-properties="{&quot;layer&quot;:&quot;storage&quot;}" data-source-label="Gallery Database (348 Songs)&#10;(Full Recordings + Demucs Vocal Stems)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\pbl6_qbh_architecture.ir.json&quot;}">
+          <mxGeometry x="290" y="380" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cloudinary_cdn" value="Cloudinary CDN Storage (pbl6_music_database/ 300 MP3s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="cloudinary_cdn" data-kind="cloud" data-properties="{&quot;layer&quot;:&quot;storage&quot;}" data-source-properties="{&quot;layer&quot;:&quot;storage&quot;}" data-source-label="Cloudinary CDN Storage&#10;(pbl6_music_database/ 300 MP3s)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\pbl6_qbh_architecture.ir.json&quot;}">
+          <mxGeometry x="520" y="380" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-0" value="Voice Record" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="client_mic" target="web_frontend" data-model-id="e1" data-kind="async" data-properties="{}" data-source-properties="{}" data-source-label="Voice Record">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-1" value="POST /api/search (WAV)" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="web_frontend" target="api_gateway" data-model-id="e2" data-kind="sync" data-properties="{}" data-source-properties="{}" data-source-label="POST /api/search (WAV)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-2" value="Raw 16kHz Audio" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="api_gateway" target="cqt_preprocessor" data-model-id="e3" data-kind="sync" data-properties="{}" data-source-properties="{}" data-source-label="Raw 16kHz Audio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-3" value="CQT Spectrogram" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="cqt_preprocessor" target="conformer_backbone" data-model-id="e4" data-kind="sync" data-properties="{}" data-source-properties="{}" data-source-label="CQT Spectrogram">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-4" value="Latent Features" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="conformer_backbone" target="dual_embeddings" data-model-id="e5" data-kind="sync" data-properties="{}" data-source-properties="{}" data-source-label="Latent Features">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-5" value="Query Embeddings" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="dual_embeddings" target="scoring_engine" data-model-id="e6" data-kind="sync" data-properties="{}" data-source-properties="{}" data-source-label="Query Embeddings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-6" value="Cached Gallery Embeddings" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="gallery_database" target="scoring_engine" data-model-id="e7" data-kind="sync" data-properties="{}" data-source-properties="{}" data-source-label="Cached Gallery Embeddings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-7" value="Top 5 Ranked Song IDs" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="scoring_engine" target="api_gateway" data-model-id="e8" data-kind="sync" data-properties="{}" data-source-properties="{}" data-source-label="Top 5 Ranked Song IDs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-8" value="JSON (Titles, MRR, CDN URLs)" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="api_gateway" target="web_frontend" data-model-id="e9" data-kind="sync" data-properties="{}" data-source-properties="{}" data-source-label="JSON (Titles, MRR, CDN URLs)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-9" value="Direct Audio Stream (MP3)" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="cloudinary_cdn" target="web_frontend" data-model-id="e10" data-kind="stream" data-properties="{}" data-source-properties="{}" data-source-label="Direct Audio Stream (MP3)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

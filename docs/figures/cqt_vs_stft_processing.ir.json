@@ -1,0 +1,103 @@
+{
+  "schema": "drawio-skill/diagram-ir/v1",
+  "metadata": {
+    "title": "CQT Audio Signal Processing and Augmentation Pipeline"
+  },
+  "nodes": [
+    {
+      "id": "raw_audio",
+      "label": "Raw Audio Waveform\n(22,050 Hz, Mono, 5-15s)",
+      "kind": "data",
+      "properties": {
+        "layer": "input"
+      }
+    },
+    {
+      "id": "stft_limitation",
+      "label": "Traditional STFT\n(Linear Δf = fs/N\nPoor Low-Freq Pitch Resolution)",
+      "kind": "component",
+      "properties": {
+        "layer": "comparison"
+      }
+    },
+    {
+      "id": "vocal_separator",
+      "label": "Meta HTDemucs v4\n(Hybrid Transformer Vocal Isolation\nTriệt tiêu nhạc nền phức tạp)",
+      "kind": "service",
+      "properties": {
+        "layer": "dsp"
+      }
+    },
+    {
+      "id": "augmentor",
+      "label": "QBH Audio Augmentations\n(Pitch Shift ±12 Semitones\nReverb RIR + Harmonic Noise)",
+      "kind": "service",
+      "properties": {
+        "layer": "dsp"
+      }
+    },
+    {
+      "id": "cqt_engine",
+      "label": "Constant-Q Transform (CQT)\n(Q = fk / Δfk = 16.89, B = 12 bins/oct\nLogarithmic Frequency Scale)",
+      "kind": "service",
+      "properties": {
+        "layer": "transformation"
+      }
+    },
+    {
+      "id": "full_cqt_output",
+      "label": "Full CQT Spectrogram (96 x 83)\n(8 Octaves C1 ~ 32.7Hz to B8 ~ 7902Hz\nHop Length = 512, Log-Power)",
+      "kind": "data",
+      "properties": {
+        "layer": "output"
+      }
+    },
+    {
+      "id": "chroma_baseline",
+      "label": "Chroma CQT Baseline (12 bins)\n(Gập quãng tám - Mất thông tin thanh vực\nBaseline trong QBH.pdf)",
+      "kind": "component",
+      "properties": {
+        "layer": "comparison"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_raw_to_stft",
+      "source": "raw_audio",
+      "target": "stft_limitation",
+      "label": "Hạn chế phân giải"
+    },
+    {
+      "id": "e_raw_to_vocal",
+      "source": "raw_audio",
+      "target": "vocal_separator",
+      "label": "Tách giọng hát"
+    },
+    {
+      "id": "e_vocal_to_aug",
+      "source": "vocal_separator",
+      "target": "augmentor",
+      "label": "Tăng cường âm học"
+    },
+    {
+      "id": "e_aug_to_cqt",
+      "source": "augmentor",
+      "target": "cqt_engine",
+      "label": "Biến đổi phổ"
+    },
+    {
+      "id": "e_cqt_to_full",
+      "source": "cqt_engine",
+      "target": "full_cqt_output",
+      "label": "Biểu diễn chuẩn 96 bins"
+    },
+    {
+      "id": "e_full_to_chroma",
+      "source": "full_cqt_output",
+      "target": "chroma_baseline",
+      "label": "So sánh đối chứng"
+    }
+  ]
+}
+

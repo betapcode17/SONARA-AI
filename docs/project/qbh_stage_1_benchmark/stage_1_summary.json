@@ -1,0 +1,775 @@
+{
+  "status": "stage_1_complete_waiting_for_user",
+  "gate": {
+    "status": "ready",
+    "rows": 6184,
+    "query_count": 773,
+    "sizes": [
+      90,
+      300
+    ]
+  },
+  "generated_at_utc": "2026-10-25T12:22:09.930893+00:00",
+  "run_signature": "52a4c73dd25194f184715a1ba2f1036a288e0c59030be5d9481253073b2d66f4",
+  "manifest_signature": "a36f0090dc6f68766de68d9ffedd69c7fd6f75fe03a7bba2ba8c6d6432181407",
+  "selection_eligible": false,
+  "checkpoint_split_audit": {
+    "status": "verified_mapping_benchmark_split_contaminated",
+    "reason": "Stage 4 resolved source train IDs. Exact SHA256 join shows the 773 benchmark query files comprise source split train=428, val=158, test=187; selection_eligible remains false."
+  },
+  "cases": [
+    {
+      "gallery_size": 90,
+      "mode": "embedding",
+      "status": "complete",
+      "completed_queries": 773,
+      "expected_queries": 773,
+      "mrr": 0.39930240571591435,
+      "recall_at_1": 0.2677878395860285,
+      "recall_at_5": 0.5291073738680466,
+      "recall_at_10": 0.6739974126778784,
+      "song_macro_mrr": 0.3935092086935279,
+      "unavailable_queries": 0,
+      "candidate_recall": 1.0,
+      "latency": {
+        "embedding_encode_seconds": {
+          "p50_seconds": 0.2180650000082096,
+          "p95_seconds": 0.6771752400003606
+        },
+        "melody_query_seconds": {
+          "p50_seconds": 0.0,
+          "p95_seconds": 0.0
+        },
+        "alignment_seconds": {
+          "p50_seconds": 0.0,
+          "p95_seconds": 0.0
+        },
+        "fusion_seconds": {
+          "p50_seconds": 7.609999738633633e-05,
+          "p95_seconds": 0.00017196000844705848
+        },
+        "decode_dsp_seconds": {
+          "p50_seconds": 0.0035914999898523092,
+          "p95_seconds": 0.008806019998155534
+        },
+        "end_to_end_seconds": {
+          "p50_seconds": 0.22711590000835713,
+          "p95_seconds": 0.6910562000004574
+        },
+        "retrieval_and_ranking_seconds": {
+          "p50_seconds": 0.004733599998871796,
+          "p95_seconds": 0.011188660003244874
+        }
+      },
+      "rss_peak_mib": 302.99609375,
+      "rss_peak_p95_mib": 241.371875
+    },
+    {
+      "gallery_size": 90,
+      "mode": "melody",
+      "status": "complete",
+      "completed_queries": 773,
+      "expected_queries": 773,
+      "mrr": 0.25686524666605764,
+      "recall_at_1": 0.15782664941785252,
+      "recall_at_5": 0.3389391979301423,
+      "recall_at_10": 0.4644243208279431,
+      "song_macro_mrr": 0.279060359347487,
+      "unavailable_queries": 0,
+      "candidate_recall": 1.0,
+      "latency": {
+        "embedding_encode_seconds": {
+          "p50_seconds": 0.21220130000438076,
+          "p95_seconds": 0.6840166799927827
+        },
+        "melody_query_seconds": {
+          "p50_seconds": 1.2498977999930503,
+          "p95_seconds": 2.4323090400022918
+        },
+        "alignment_seconds": {
+          "p50_seconds": 3.240511899959529,
+          "p95_seconds": 6.7111038800198
+        },
+        "fusion_seconds": {
+          "p50_seconds": 0.00012630000128410757,
+          "p95_seconds": 0.0002441799995722249
+        },
+        "decode_dsp_seconds": {
+          "p50_seconds": 0.003668500001367647,
+          "p95_seconds": 0.010610960000485647
+        },
+        "end_to_end_seconds": {
+          "p50_seconds": 4.711091900004249,
+          "p95_seconds": 9.64784101999976
+        },
+        "retrieval_and_ranking_seconds": {
+          "p50_seconds": 0.006365900015225634,
+          "p95_seconds": 0.011175260020536369
+        }
+      },
+      "rss_peak_mib": 328.44140625,
+      "rss_peak_p95_mib": 265.2453125
+    },
+    {
+      "gallery_size": 90,
+      "mode": "hybrid",
+      "status": "complete",
+      "completed_queries": 773,
+      "expected_queries": 773,
+      "mrr": 0.4365231644870744,
+      "recall_at_1": 0.31371280724450196,
+      "recall_at_5": 0.5769728331177232,
+      "recall_at_10": 0.6895213454075032,
+      "song_macro_mrr": 0.42518414754327305,
+      "unavailable_queries": 0,
+      "candidate_recall": 1.0,
+      "latency": {
+        "embedding_encode_seconds": {
+          "p50_seconds": 0.21378619999450166,
+          "p95_seconds": 0.6742110599996521
+        },
+        "melody_query_seconds": {
+          "p50_seconds": 1.2487389000016265,
+          "p95_seconds": 2.4718229000020067
+        },
+        "alignment_seconds": {
+          "p50_seconds": 3.1920315000461414,
+          "p95_seconds": 6.799342120041547
+        },
+        "fusion_seconds": {
+          "p50_seconds": 0.00012630000128410757,
+          "p95_seconds": 0.00026828000263776617
+        },
+        "decode_dsp_seconds": {
+          "p50_seconds": 0.003599300005589612,
+          "p95_seconds": 0.008531119997496716
+        },
+        "end_to_end_seconds": {
+          "p50_seconds": 4.728631899997708,
+          "p95_seconds": 9.448359840002375
+        },
+        "retrieval_and_ranking_seconds": {
+          "p50_seconds": 0.006394600059138611,
+          "p95_seconds": 0.012596700014546512
+        }
+      },
+      "rss_peak_mib": 351.4609375,
+      "rss_peak_p95_mib": 265.71718749999997
+    },
+    {
+      "gallery_size": 90,
+      "mode": "cascade",
+      "status": "complete",
+      "completed_queries": 773,
+      "expected_queries": 773,
+      "mrr": 0.3386482023026346,
+      "recall_at_1": 0.21604139715394566,
+      "recall_at_5": 0.46959896507115134,
+      "recall_at_10": 0.6170763260025873,
+      "song_macro_mrr": 0.33367719189477607,
+      "unavailable_queries": 0,
+      "candidate_recall": 0.8059508408796895,
+      "latency": {
+        "embedding_encode_seconds": {
+          "p50_seconds": 0.21672740000940394,
+          "p95_seconds": 0.6633049000025493
+        },
+        "melody_query_seconds": {
+          "p50_seconds": 1.2444341000009445,
+          "p95_seconds": 2.363914079999085
+        },
+        "alignment_seconds": {
+          "p50_seconds": 0.7742683000178658,
+          "p95_seconds": 1.7110338999860686
+        },
+        "fusion_seconds": {
+          "p50_seconds": 9.050000517163426e-05,
+          "p95_seconds": 0.00017428000282961875
+        },
+        "decode_dsp_seconds": {
+          "p50_seconds": 0.0036336999910417944,
+          "p95_seconds": 0.00976198000280419
+        },
+        "end_to_end_seconds": {
+          "p50_seconds": 2.2562292000075104,
+          "p95_seconds": 4.796064619999379
+        },
+        "retrieval_and_ranking_seconds": {
+          "p50_seconds": 0.005462900051497854,
+          "p95_seconds": 0.010630440001841634
+        }
+      },
+      "rss_peak_mib": 332.17578125,
+      "rss_peak_p95_mib": 265.909375
+    },
+    {
+      "gallery_size": 300,
+      "mode": "embedding",
+      "status": "complete",
+      "completed_queries": 773,
+      "expected_queries": 773,
+      "mrr": 0.25323148683430013,
+      "recall_at_1": 0.16041397153945666,
+      "recall_at_5": 0.3389391979301423,
+      "recall_at_10": 0.4553686934023286,
+      "song_macro_mrr": 0.26037815628907995,
+      "unavailable_queries": 0,
+      "candidate_recall": 1.0,
+      "latency": {
+        "embedding_encode_seconds": {
+          "p50_seconds": 0.2179484000080265,
+          "p95_seconds": 0.9751247400010467
+        },
+        "melody_query_seconds": {
+          "p50_seconds": 0.0,
+          "p95_seconds": 0.0
+        },
+        "alignment_seconds": {
+          "p50_seconds": 0.0,
+          "p95_seconds": 0.0
+        },
+        "fusion_seconds": {
+          "p50_seconds": 0.00020640000002458692,
+          "p95_seconds": 0.0006054200057405978
+        },
+        "decode_dsp_seconds": {
+          "p50_seconds": 0.0036722000077134,
+          "p95_seconds": 0.014959000001545058
+        },
+        "end_to_end_seconds": {
+          "p50_seconds": 0.23954650000086986,
+          "p95_seconds": 1.001012179997633
+        },
+        "retrieval_and_ranking_seconds": {
+          "p50_seconds": 0.015282899999874644,
+          "p95_seconds": 0.05280744000046978
+        }
+      },
+      "rss_peak_mib": 286.7421875,
+      "rss_peak_p95_mib": 277.68671875
+    },
+    {
+      "gallery_size": 300,
+      "mode": "melody",
+      "status": "complete",
+      "completed_queries": 773,
+      "expected_queries": 773,
+      "mrr": 0.18841371728745462,
+      "recall_at_1": 0.12419146183699871,
+      "recall_at_5": 0.2238033635187581,
+      "recall_at_10": 0.31047865459249674,
+      "song_macro_mrr": 0.21365324641736896,
+      "unavailable_queries": 0,
+      "candidate_recall": 1.0,
+      "latency": {
+        "embedding_encode_seconds": {
+          "p50_seconds": 0.22014300001319498,
+          "p95_seconds": 0.9546463199978457
+        },
+        "melody_query_seconds": {
+          "p50_seconds": 1.179876599999261,
+          "p95_seconds": 3.3549003600055585
+        },
+        "alignment_seconds": {
+          "p50_seconds": 10.688244799879612,
+          "p95_seconds": 29.987048399980992
+        },
+        "fusion_seconds": {
+          "p50_seconds": 0.0003606999962357804,
+          "p95_seconds": 0.0014401799970073625
+        },
+        "decode_dsp_seconds": {
+          "p50_seconds": 0.00410849999752827,
+          "p95_seconds": 0.016676160003407853
+        },
+        "end_to_end_seconds": {
+          "p50_seconds": 12.327789800008759,
+          "p95_seconds": 34.23260241999524
+        },
+        "retrieval_and_ranking_seconds": {
+          "p50_seconds": 0.018175700039137155,
+          "p95_seconds": 0.0771492600499186
+        }
+      },
+      "rss_peak_mib": 319.90625,
+      "rss_peak_p95_mib": 303.1890625
+    },
+    {
+      "gallery_size": 300,
+      "mode": "hybrid",
+      "status": "complete",
+      "completed_queries": 773,
+      "expected_queries": 773,
+      "mrr": 0.32699238796469243,
+      "recall_at_1": 0.22833117723156532,
+      "recall_at_5": 0.4191461836998706,
+      "recall_at_10": 0.5071151358344114,
+      "song_macro_mrr": 0.3418752806752867,
+      "unavailable_queries": 0,
+      "candidate_recall": 1.0,
+      "latency": {
+        "embedding_encode_seconds": {
+          "p50_seconds": 0.21325049998995382,
+          "p95_seconds": 1.0295713000028615
+        },
+        "melody_query_seconds": {
+          "p50_seconds": 1.1800165999884484,
+          "p95_seconds": 3.5147198199993
+        },
+        "alignment_seconds": {
+          "p50_seconds": 10.650378099962836,
+          "p95_seconds": 30.149216599986534
+        },
+        "fusion_seconds": {
+          "p50_seconds": 0.00036389999149832875,
+          "p95_seconds": 0.0015314000047510485
+        },
+        "decode_dsp_seconds": {
+          "p50_seconds": 0.0038382000057026744,
+          "p95_seconds": 0.0193201200076146
+        },
+        "end_to_end_seconds": {
+          "p50_seconds": 12.268272200002684,
+          "p95_seconds": 34.99423157999698
+        },
+        "retrieval_and_ranking_seconds": {
+          "p50_seconds": 0.01888509998389054,
+          "p95_seconds": 0.1175263600453035
+        }
+      },
+      "rss_peak_mib": 315.58984375,
+      "rss_peak_p95_mib": 302.95
+    },
+    {
+      "gallery_size": 300,
+      "mode": "cascade",
+      "status": "complete",
+      "completed_queries": 773,
+      "expected_queries": 773,
+      "mrr": 0.27343180497460595,
+      "recall_at_1": 0.1927554980595084,
+      "recall_at_5": 0.35446313065976714,
+      "recall_at_10": 0.46054333764553684,
+      "song_macro_mrr": 0.2630608143630588,
+      "unavailable_queries": 0,
+      "candidate_recall": 0.5860284605433377,
+      "latency": {
+        "embedding_encode_seconds": {
+          "p50_seconds": 0.21338359999936074,
+          "p95_seconds": 1.207348259995342
+        },
+        "melody_query_seconds": {
+          "p50_seconds": 1.1671983999985969,
+          "p95_seconds": 3.227079040007083
+        },
+        "alignment_seconds": {
+          "p50_seconds": 0.7994370999804232,
+          "p95_seconds": 2.234017979959025
+        },
+        "fusion_seconds": {
+          "p50_seconds": 0.00021850000484846532,
+          "p95_seconds": 0.0004842800059122958
+        },
+        "decode_dsp_seconds": {
+          "p50_seconds": 0.003895000001648441,
+          "p95_seconds": 0.020067099994048467
+        },
+        "end_to_end_seconds": {
+          "p50_seconds": 2.215453400000115,
+          "p95_seconds": 6.539213300001573
+        },
+        "retrieval_and_ranking_seconds": {
+          "p50_seconds": 0.014174200041452423,
+          "p95_seconds": 0.11588392000121525
+        }
+      },
+      "rss_peak_mib": 319.9140625,
+      "rss_peak_p95_mib": 302.45703125
+    },
+    {
+      "gallery_size": 1000,
+      "mode": "embedding",
+      "status": "unavailable_data",
+      "reason": "Only 327 eligible real recordings.",
+      "completed_queries": 0,
+      "expected_queries": 773
+    },
+    {
+      "gallery_size": 1000,
+      "mode": "melody",
+      "status": "unavailable_data",
+      "reason": "Only 327 eligible real recordings.",
+      "completed_queries": 0,
+      "expected_queries": 773
+    },
+    {
+      "gallery_size": 1000,
+      "mode": "hybrid",
+      "status": "unavailable_data",
+      "reason": "Only 327 eligible real recordings.",
+      "completed_queries": 0,
+      "expected_queries": 773
+    },
+    {
+      "gallery_size": 1000,
+      "mode": "cascade",
+      "status": "unavailable_data",
+      "reason": "Only 327 eligible real recordings.",
+      "completed_queries": 0,
+      "expected_queries": 773
+    },
+    {
+      "gallery_size": 10000,
+      "mode": "embedding",
+      "status": "unavailable_data",
+      "reason": "Only 327 eligible real recordings.",
+      "completed_queries": 0,
+      "expected_queries": 773
+    },
+    {
+      "gallery_size": 10000,
+      "mode": "melody",
+      "status": "unavailable_data",
+      "reason": "Only 327 eligible real recordings.",
+      "completed_queries": 0,
+      "expected_queries": 773
+    },
+    {
+      "gallery_size": 10000,
+      "mode": "hybrid",
+      "status": "unavailable_data",
+      "reason": "Only 327 eligible real recordings.",
+      "completed_queries": 0,
+      "expected_queries": 773
+    },
+    {
+      "gallery_size": 10000,
+      "mode": "cascade",
+      "status": "unavailable_data",
+      "reason": "Only 327 eligible real recordings.",
+      "completed_queries": 0,
+      "expected_queries": 773
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "baseline_gallery_size": 90,
+      "gallery_size": 300,
+      "mode": "embedding",
+      "queries": 773,
+      "songs": 45,
+      "bootstrap_repetitions": 1000,
+      "method": "paired song-cluster bootstrap; expanded minus baseline",
+      "metrics": {
+        "mrr": {
+          "delta": -0.14607091888161425,
+          "ci95_low": -0.16392198958724058,
+          "ci95_high": -0.12428009412017033
+        },
+        "recall_at_1": {
+          "delta": -0.1073738680465718,
+          "ci95_low": -0.13241539976188293,
+          "ci95_high": -0.07913644527761146
+        },
+        "recall_at_5": {
+          "delta": -0.19016817593790428,
+          "ci95_low": -0.2191440372776602,
+          "ci95_high": -0.15740035864122345
+        },
+        "recall_at_10": {
+          "delta": -0.2186287192755498,
+          "ci95_low": -0.24810174169601218,
+          "ci95_high": -0.18478713248676232
+        }
+      }
+    },
+    {
+      "baseline_gallery_size": 90,
+      "gallery_size": 300,
+      "mode": "melody",
+      "queries": 773,
+      "songs": 45,
+      "bootstrap_repetitions": 1000,
+      "method": "paired song-cluster bootstrap; expanded minus baseline",
+      "metrics": {
+        "mrr": {
+          "delta": -0.06845152937860302,
+          "ci95_low": -0.08367457959683627,
+          "ci95_high": -0.05261319955064586
+        },
+        "recall_at_1": {
+          "delta": -0.03363518758085381,
+          "ci95_low": -0.050734312416555405,
+          "ci95_high": -0.019059496543014323
+        },
+        "recall_at_5": {
+          "delta": -0.11513583441138421,
+          "ci95_low": -0.15315343824837493,
+          "ci95_high": -0.07360496411483254
+        },
+        "recall_at_10": {
+          "delta": -0.1539456662354463,
+          "ci95_low": -0.19193580542264752,
+          "ci95_high": -0.10690715352246506
+        }
+      }
+    },
+    {
+      "baseline_gallery_size": 90,
+      "gallery_size": 300,
+      "mode": "hybrid",
+      "queries": 773,
+      "songs": 45,
+      "bootstrap_repetitions": 1000,
+      "method": "paired song-cluster bootstrap; expanded minus baseline",
+      "metrics": {
+        "mrr": {
+          "delta": -0.10953077652238197,
+          "ci95_low": -0.1330837087080109,
+          "ci95_high": -0.08012350459418052
+        },
+        "recall_at_1": {
+          "delta": -0.08538163001293661,
+          "ci95_low": -0.116607629049286,
+          "ci95_high": -0.051351130322740704
+        },
+        "recall_at_5": {
+          "delta": -0.15782664941785252,
+          "ci95_low": -0.1925963009317202,
+          "ci95_high": -0.11613792136433637
+        },
+        "recall_at_10": {
+          "delta": -0.18240620957309184,
+          "ci95_low": -0.22149431443918538,
+          "ci95_high": -0.14146755533199196
+        }
+      }
+    },
+    {
+      "baseline_gallery_size": 90,
+      "gallery_size": 300,
+      "mode": "cascade",
+      "queries": 773,
+      "songs": 45,
+      "bootstrap_repetitions": 1000,
+      "method": "paired song-cluster bootstrap; expanded minus baseline",
+      "metrics": {
+        "mrr": {
+          "delta": -0.06521639732802867,
+          "ci95_low": -0.09328632805116725,
+          "ci95_high": -0.04301720749626387
+        },
+        "recall_at_1": {
+          "delta": -0.02328589909443726,
+          "ci95_low": -0.054255595931979844,
+          "ci95_high": 0.0
+        },
+        "recall_at_5": {
+          "delta": -0.11513583441138421,
+          "ci95_low": -0.1503980198273433,
+          "ci95_high": -0.07516837593754784
+        },
+        "recall_at_10": {
+          "delta": -0.15653298835705046,
+          "ci95_low": -0.19893865953535014,
+          "ci95_high": -0.11436664334577121
+        }
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "gallery_size": 90,
+      "mode": "cascade",
+      "flag": "ground_truth_outside_shortlist",
+      "queries": 150,
+      "fraction": 0.19404915912031048
+    },
+    {
+      "gallery_size": 90,
+      "mode": "cascade",
+      "flag": "ground_truth_retrieved_below_top5",
+      "queries": 260,
+      "fraction": 0.33635187580853815
+    },
+    {
+      "gallery_size": 90,
+      "mode": "cascade",
+      "flag": "low_active_audio_fraction",
+      "queries": 2,
+      "fraction": 0.00258732212160414
+    },
+    {
+      "gallery_size": 90,
+      "mode": "cascade",
+      "flag": "wrong_top1_runtime_tiebreak",
+      "queries": 606,
+      "fraction": 0.7839586028460543
+    },
+    {
+      "gallery_size": 90,
+      "mode": "embedding",
+      "flag": "ground_truth_retrieved_below_top5",
+      "queries": 364,
+      "fraction": 0.47089262613195343
+    },
+    {
+      "gallery_size": 90,
+      "mode": "embedding",
+      "flag": "low_active_audio_fraction",
+      "queries": 2,
+      "fraction": 0.00258732212160414
+    },
+    {
+      "gallery_size": 90,
+      "mode": "embedding",
+      "flag": "wrong_top1_runtime_tiebreak",
+      "queries": 566,
+      "fraction": 0.7322121604139715
+    },
+    {
+      "gallery_size": 90,
+      "mode": "hybrid",
+      "flag": "ground_truth_retrieved_below_top5",
+      "queries": 327,
+      "fraction": 0.4230271668822768
+    },
+    {
+      "gallery_size": 90,
+      "mode": "hybrid",
+      "flag": "low_active_audio_fraction",
+      "queries": 2,
+      "fraction": 0.00258732212160414
+    },
+    {
+      "gallery_size": 90,
+      "mode": "hybrid",
+      "flag": "wrong_top1_runtime_tiebreak",
+      "queries": 531,
+      "fraction": 0.6869340232858991
+    },
+    {
+      "gallery_size": 90,
+      "mode": "melody",
+      "flag": "ground_truth_retrieved_below_top5",
+      "queries": 511,
+      "fraction": 0.6610608020698577
+    },
+    {
+      "gallery_size": 90,
+      "mode": "melody",
+      "flag": "low_active_audio_fraction",
+      "queries": 2,
+      "fraction": 0.00258732212160414
+    },
+    {
+      "gallery_size": 90,
+      "mode": "melody",
+      "flag": "wrong_top1_runtime_tiebreak",
+      "queries": 651,
+      "fraction": 0.8421733505821475
+    },
+    {
+      "gallery_size": 300,
+      "mode": "cascade",
+      "flag": "ground_truth_outside_shortlist",
+      "queries": 320,
+      "fraction": 0.4139715394566624
+    },
+    {
+      "gallery_size": 300,
+      "mode": "cascade",
+      "flag": "ground_truth_retrieved_below_top5",
+      "queries": 179,
+      "fraction": 0.2315653298835705
+    },
+    {
+      "gallery_size": 300,
+      "mode": "cascade",
+      "flag": "low_active_audio_fraction",
+      "queries": 2,
+      "fraction": 0.00258732212160414
+    },
+    {
+      "gallery_size": 300,
+      "mode": "cascade",
+      "flag": "wrong_top1_runtime_tiebreak",
+      "queries": 624,
+      "fraction": 0.8072445019404916
+    },
+    {
+      "gallery_size": 300,
+      "mode": "embedding",
+      "flag": "ground_truth_retrieved_below_top5",
+      "queries": 511,
+      "fraction": 0.6610608020698577
+    },
+    {
+      "gallery_size": 300,
+      "mode": "embedding",
+      "flag": "low_active_audio_fraction",
+      "queries": 2,
+      "fraction": 0.00258732212160414
+    },
+    {
+      "gallery_size": 300,
+      "mode": "embedding",
+      "flag": "wrong_top1_runtime_tiebreak",
+      "queries": 649,
+      "fraction": 0.8395860284605433
+    },
+    {
+      "gallery_size": 300,
+      "mode": "hybrid",
+      "flag": "ground_truth_retrieved_below_top5",
+      "queries": 449,
+      "fraction": 0.5808538163001293
+    },
+    {
+      "gallery_size": 300,
+      "mode": "hybrid",
+      "flag": "low_active_audio_fraction",
+      "queries": 2,
+      "fraction": 0.00258732212160414
+    },
+    {
+      "gallery_size": 300,
+      "mode": "hybrid",
+      "flag": "wrong_top1_runtime_tiebreak",
+      "queries": 597,
+      "fraction": 0.7723156532988357
+    },
+    {
+      "gallery_size": 300,
+      "mode": "melody",
+      "flag": "ground_truth_retrieved_below_top5",
+      "queries": 600,
+      "fraction": 0.7761966364812419
+    },
+    {
+      "gallery_size": 300,
+      "mode": "melody",
+      "flag": "low_active_audio_fraction",
+      "queries": 2,
+      "fraction": 0.00258732212160414
+    },
+    {
+      "gallery_size": 300,
+      "mode": "melody",
+      "flag": "wrong_top1_runtime_tiebreak",
+      "queries": 677,
+      "fraction": 0.8758085381630013
+    }
+  ],
+  "next_stage_started": false,
+  "provenance_followup": {
+    "stage4_report": "docs/project/qbh_stage_4_provenance/REPORT.md",
+    "query_hash_matches": "773/773",
+    "original_source_split_counts": {
+      "test": 187,
+      "train": 428,
+      "val": 158
+    },
+    "historical_source_test_queries_in_benchmark": 187
+  }
+}

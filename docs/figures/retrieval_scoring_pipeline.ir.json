@@ -1,0 +1,143 @@
+{
+  "schema": "drawio-skill/diagram-ir/v1",
+  "metadata": {
+    "title": "Two-Stage Retrieval and Cloudinary CDN Streaming Pipeline"
+  },
+  "nodes": [
+    {
+      "id": "query_stream",
+      "label": "Microphone Audio Stream\n(5-15s Humming / Whistling Audio)",
+      "kind": "data",
+      "properties": {
+        "layer": "input"
+      }
+    },
+    {
+      "id": "online_cqt",
+      "label": "Online CQT Extractor\n(PyTorch In-RAM CQT 96 bins x 83 frames\nLatency < 120ms)",
+      "kind": "service",
+      "properties": {
+        "layer": "preprocessing"
+      }
+    },
+    {
+      "id": "query_encoder",
+      "label": "Conformer Encoder\n(Global ASP 128D & Local 20x128D Tensors)",
+      "kind": "model",
+      "properties": {
+        "layer": "ai_inference"
+      }
+    },
+    {
+      "id": "gallery_cache",
+      "label": "In-RAM Gallery Cache (348 Songs)\n(Pre-computed Master Stem Embeddings\nZero I/O Disk Bottleneck)",
+      "kind": "database",
+      "properties": {
+        "layer": "storage"
+      }
+    },
+    {
+      "id": "stage1_filter",
+      "label": "Stage 1: Top-K Quantile Search\n(Cosine Similarity with 85% Quantile Pooling\nLọc Top-20 Ứng viên nhanh)",
+      "kind": "service",
+      "properties": {
+        "layer": "retrieval"
+      }
+    },
+    {
+      "id": "stage2_rerank",
+      "label": "Stage 2: ByteHum LAT Re-ranking\n(MaxMean Cross-Attention Alignment\nSo khớp chi tiết từng phân đoạn)",
+      "kind": "service",
+      "properties": {
+        "layer": "retrieval"
+      }
+    },
+    {
+      "id": "fused_scoring",
+      "label": "Score Fusion Engine\n(S_final = 0.75 * S_metric + 0.25 * S_LAT\nChuẩn hóa xếp hạng Rank #1)",
+      "kind": "component",
+      "properties": {
+        "layer": "ranking"
+      }
+    },
+    {
+      "id": "cloudinary_cdn",
+      "label": "Cloudinary Music CDN\n(300 Bài hát MP3 chất lượng cao\nDirect Streaming URL)",
+      "kind": "cloud",
+      "properties": {
+        "layer": "delivery"
+      }
+    },
+    {
+      "id": "web_response",
+      "label": "FastAPI Web Response\n(JSON: Track Metadata, Confidence,\nPlayback Stream URL)",
+      "kind": "service",
+      "properties": {
+        "layer": "api"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_mic_to_cqt",
+      "source": "query_stream",
+      "target": "online_cqt",
+      "label": "Audio Stream"
+    },
+    {
+      "id": "e_cqt_to_enc",
+      "source": "online_cqt",
+      "target": "query_encoder",
+      "label": "Phổ CQT"
+    },
+    {
+      "id": "e_enc_to_s1",
+      "source": "query_encoder",
+      "target": "stage1_filter",
+      "label": "Query Vector"
+    },
+    {
+      "id": "e_cache_to_s1",
+      "source": "gallery_cache",
+      "target": "stage1_filter",
+      "label": "Gallery Vectors"
+    },
+    {
+      "id": "e_s1_to_s2",
+      "source": "stage1_filter",
+      "target": "stage2_rerank",
+      "label": "Top-20 Ứng viên"
+    },
+    {
+      "id": "e_s1_to_fuse",
+      "source": "stage1_filter",
+      "target": "fused_scoring",
+      "label": "Metric Score"
+    },
+    {
+      "id": "e_s2_to_fuse",
+      "source": "stage2_rerank",
+      "target": "fused_scoring",
+      "label": "LAT Score"
+    },
+    {
+      "id": "e_fuse_to_cdn",
+      "source": "fused_scoring",
+      "target": "cloudinary_cdn",
+      "label": "Track ID Mapping"
+    },
+    {
+      "id": "e_cdn_to_api",
+      "source": "cloudinary_cdn",
+      "target": "web_response",
+      "label": "Stream Audio"
+    },
+    {
+      "id": "e_fuse_to_api",
+      "source": "fused_scoring",
+      "target": "web_response",
+      "label": "Xếp hạng & Độ tin cậy"
+    }
+  ]
+}
+

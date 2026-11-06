@@ -1,0 +1,126 @@
+{
+  "status": "holdout_metadata_and_hash_preflight_complete_waiting_for_final_run",
+  "created_at_utc": "2026-10-26T04:13:42.039623+00:00",
+  "scope": "Manifest/log audit plus streaming SHA256 integrity checks only. No audio decoding, playback, feature extraction, inference, training, or test metrics.",
+  "source_split_counts": {
+    "train_songs": 210,
+    "validation_songs": 45,
+    "test_songs": 45
+  },
+  "source_test": {
+    "songs": 45,
+    "query_rows": 809,
+    "unique_query_sha256": 809
+  },
+  "prior_benchmark_usage": {
+    "artifacts_scanned": 24,
+    "artifacts_with_original_test_hashes": [
+      {
+        "path": "core/.cache/benchmarks/v3_val_full/manifest.json",
+        "test_query_hashes_matched": 187
+      },
+      {
+        "path": "core/.cache/benchmarks/v3_val_full/per_query.csv",
+        "test_query_hashes_matched": 187
+      },
+      {
+        "path": "core/.cache/benchmarks/v3_val_full_rss_v2/manifest.json",
+        "test_query_hashes_matched": 187
+      },
+      {
+        "path": "core/.cache/benchmarks/v3_val_full_rss_v2/per_query.csv",
+        "test_query_hashes_matched": 187
+      },
+      {
+        "path": "core/.cache/benchmarks/scorer_parity_773/per_query.csv",
+        "test_query_hashes_matched": 187
+      }
+    ],
+    "unique_original_test_hashes_seen": 187,
+    "whole_songs_excluded": 9,
+    "excluded_song_ids": [
+      "04154c76eacfde72",
+      "26803c35992f8280",
+      "2cf17d04acacd9df",
+      "45ee58f8ae849a53",
+      "5f0afe55b9885e83",
+      "777e721176e34e09",
+      "9a05e1b265672aed",
+      "a2121158c82e27f6",
+      "cda3fc3183608ae6"
+    ]
+  },
+  "clean_candidate": {
+    "songs": 36,
+    "source_query_rows": 618,
+    "verified_query_files": 615,
+    "verified_hash_matches": 615,
+    "missing_query_files": 3,
+    "hash_mismatches": 0,
+    "every_candidate_song_has_verified_query": true,
+    "candidate_song_ids": [
+      "0bcb7cdc6c1daa1d",
+      "0bd65a382700dfda",
+      "0c7a21d33f4123be",
+      "0e70fecd7c2d3f50",
+      "13a42f31a715d1ae",
+      "210592425c38ddb2",
+      "2a4f927c59da5553",
+      "2bb0fef579f3588a",
+      "328dda4f0654b8d5",
+      "37997f3216adf0f6",
+      "3e868b749973bc1a",
+      "44d38d21466c7995",
+      "51d65555c2020542",
+      "5cf708b68e8a30e5",
+      "5ee69fc60b3ba877",
+      "5ff3f52c51d16bc2",
+      "61dcd6f5ea9da1b2",
+      "67325541ea97ef8b",
+      "7ab7766c4a85ad50",
+      "7b53db016956f66a",
+      "81a90bde4ba56415",
+      "98245f6bffabb385",
+      "98fb20516b199609",
+      "a30e15c7131b3e65",
+      "ad069dcabfb1514c",
+      "af196e65df8d7449",
+      "c14cfa8dd3541e74",
+      "c1f678f2f39213b5",
+      "cfcaebee5579232c",
+      "e6944610cfc9bfc6",
+      "f313f212741c04dd",
+      "f36c6583ae9fb219",
+      "f8706f388a7150c1",
+      "fa2e27b839190daa",
+      "fc2ad21b105b219e",
+      "fced8844096a3270"
+    ]
+  },
+  "gallery": {
+    "full_music_files": 300,
+    "candidate_song_references_found": 36,
+    "candidate_reference_files_read": false
+  },
+  "cross_split_duplicate_humming_hashes": 0,
+  "source_metadata_sha256": {
+    "manifest_csv": "b0f26a45e07764ea9d62d1f34b0f3561a9d40b8287a29304c26a0f0f5c17fb81",
+    "splits_json": "b5cf1c16ce3ca44add5e622babb93ffdbcbf2010c7dc8f0e2a1b133ad2dce31f",
+    "checkpoint_contract_json": "3c1bb85958de67e7985c94bb56842b300d6e7e831972aa0dc9bbe85d556d3783"
+  },
+  "policy": "Preserve original train/validation/test assignments from checkpoint source mapping. Exclude an entire original-test song if any query SHA was used in previous benchmark artifacts. Keep candidate test locked until one final evaluation.",
+  "limitations": [
+    "The audit covers benchmark manifests/results/logs available in this workspace; remote Kaggle/cloud or external local logs were not available.",
+    "Three source-test query files are missing locally and must be recovered or explicitly excluded before final evaluation.",
+    "The 615 verified hashes match the supplied source manifest; the holdout must remain unused by all training and selection code."
+  ],
+  "locked_final_test": {
+    "songs": 36,
+    "query_rows": 615,
+    "excluded_missing_query_rows": 3,
+    "query_manifest": "docs/project/qbh_stage_5_holdout_preflight/locked_final_test_manifest.csv",
+    "missing_queries": "docs/project/qbh_stage_5_holdout_preflight/excluded_missing_queries.csv",
+    "policy": "Do not add the 3 missing rows after model selection; the locked query set is exactly the 615 hash-verified rows."
+  },
+  "locked_manifest_sha256": "378c4ddcb05426913359f73f012791a565e99bb53aae9f68a6c44789e0f036ab"
+}

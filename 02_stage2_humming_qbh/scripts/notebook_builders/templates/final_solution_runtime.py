@@ -1,11 +1,12 @@
 """Build-time template only. Its code is embedded in both final notebooks."""
 
 # %% imports
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import os
 import sys
 import subprocess
 import json
+import base64
 import hashlib
 import random
 import math
@@ -15,7 +16,8 @@ import gc
 import shutil
 import zipfile
 import stat
-from collections import OrderedDict
+import zlib
+from collections import Counter, OrderedDict
 from datetime import datetime, timezone
 from typing import Dict, List, Optional, Tuple, Union
 import numpy as np
@@ -30,6 +32,26 @@ from torch.utils.data import Dataset, DataLoader
 import scipy.sparse
 import soundfile as sf
 import librosa
+
+if not callable(globals().get('qbh_stage')):
+    QBH_DIAGNOSTIC_LOG = Path(OUTPUT_ROOT) / 'train' / 'run_diagnostics.jsonl'
+    QBH_DIAGNOSTIC_LOG.parent.mkdir(parents=True, exist_ok=True)
+    QBH_CURRENT_STAGE = 'Runtime startup'
+    def _qbh_log_event(event, **fields):
+        record = dict(time_utc=datetime.now(timezone.utc).isoformat(), event=event,
+                      stage=QBH_CURRENT_STAGE, **fields)
+        with QBH_DIAGNOSTIC_LOG.open('a', encoding='utf-8') as handle:
+            handle.write(json.dumps(record, ensure_ascii=False, default=str) + '\n')
+    def qbh_stage(name):
+        global QBH_CURRENT_STAGE
+        QBH_CURRENT_STAGE = str(name)
+        print(f'[QBH] START: {QBH_CURRENT_STAGE}', flush=True)
+        _qbh_log_event('stage_start')
+    def qbh_success(message):
+        print(f'[QBH] SUCCESS: {message}', flush=True)
+        _qbh_log_event('stage_success', message=str(message))
+
+qbh_stage('Load runtime libraries and initialize GPU')
 try:
     import typeguard
     if not hasattr(typeguard, 'check_argument_types'):
@@ -55,11 +77,13 @@ np.random.seed(42)
 torch.manual_seed(42)
 torch.cuda.manual_seed_all(42)
 print('GPU:', torch.cuda.get_device_name(0), '| PyTorch:', torch.__version__)
+qbh_success(f'Runtime ready on {torch.cuda.get_device_name(0)} with PyTorch {torch.__version__}')
 
 # %% paths
 INPUT_ROOT = Path(INPUT_ROOT)
 OUTPUT_ROOT = Path(OUTPUT_ROOT)
 OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
+qbh_stage('Locate dataset and pretrained checkpoint inputs')
 for env, folder in [('NUMBA_CACHE_DIR', 'numba'), ('MPLCONFIGDIR', 'matplotlib')]:
     (OUTPUT_ROOT / folder).mkdir(exist_ok=True)
     os.environ[env] = str(OUTPUT_ROOT / folder)
@@ -133,6 +157,7 @@ if DATASET_ARCHIVE_OVERRIDE is not None or not (split_candidates or DATASET_OVER
     music_candidates.extend(unpacked.rglob('2_music_database'))
 DATASET_SPLIT_DIR = unique_path(DATASET_OVERRIDE, split_candidates, 'DATASET_OVERRIDE')
 MUSIC_DB_DIR = unique_path(MUSIC_OVERRIDE, music_candidates, 'MUSIC_OVERRIDE')
+qbh_success(f'Dataset split: {DATASET_SPLIT_DIR}; full-song gallery: {MUSIC_DB_DIR}')
 EMBEDDING_DIM = 128
 EVAL_BATCH_SIZE = 8
 GALLERY_SONG_BLOCK = 8
@@ -147,7 +172,8 @@ RUN_CONFIG = dict(pipeline='qbh_final_v5', seed=42, epochs=30, patience=5,
                   weight_decay=0.01, clip=1.0, amp='fp16',
                   validation_gallery='train+val full recordings',
                   selection='fused_micro_mrr', score='0.5 local MaxMean + 0.5 global max',
-                  test_gallery='all full recordings', tie_rtol=1e-6, tie_atol=1e-7)
+                  test_gallery='all full recordings', dataset_policy='audited_partial_source_archive',
+                  tie_rtol=1e-6, tie_atol=1e-7)
 PREPROCESS_CONFIG = dict(sr=16000, chunk_seconds=10, hop_seconds=3,
                          final_anchored_window=True, bins=96, frames=83,
                          cqt_hop=0.04, cqt_mean=3, floor_db=-80.0)
@@ -263,6 +289,107 @@ def raw_cqts(path):
     return chunks
 
 AUDIO_EXTENSIONS = {'.wav', '.mp3', '.flac', '.ogg', '.m4a'}
+SOURCE_SONG_COUNTS = {'train': 210, 'val': 45, 'test': 45}
+SOURCE_QUERY_COUNTS = {'train': 3612, 'val': 766}
+AVAILABLE_QUERY_COUNTS = {'train': 3583, 'val': 763, 'test': 802}
+SOURCE_MAPPING_SHA256 = 'e0d2094858e44cbec76a9c87fb8d8909cdfb7350f905494a0cb6cda22c9ffb6c'
+SOURCE_SPLIT_MANIFEST_SHA256 = '06fcd81f0befa48cde9fbce2bbae92c9579ac295bd9747ce85fb8fe28b65229d'
+LOCKED_MANIFEST_SHA256 = '38fa98e0157e8bff366f4b6c69e7bf0b193148882b165b00b6fae6bec74efe63'
+SOURCE_QUERY_ROWS = json.loads(zlib.decompress(base64.b64decode(SOURCE_QUERY_INDEX_ZLIB_B64)).decode('utf-8'))
+_source_index_bytes = json.dumps(SOURCE_QUERY_ROWS, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
+if hashlib.sha256(_source_index_bytes).hexdigest() != SOURCE_QUERY_INDEX_SHA256:
+    raise ValueError('Embedded verified source-query index failed its SHA256 check.')
+SOURCE_QUERY_BY_ID = {row['audio_id']: row for row in SOURCE_QUERY_ROWS}
+if len(SOURCE_QUERY_ROWS) != 5187 or len(SOURCE_QUERY_BY_ID) != 5187:
+    raise ValueError('Embedded source-query index must contain 5,187 unique query IDs.')
+
+def validate_dataset_package(split_ids):
+    split_manifest_path = DATASET_SPLIT_DIR / 'split_manifest.json'
+    if not split_manifest_path.is_file():
+        raise FileNotFoundError('Missing dataset_split/split_manifest.json; use the rebuilt source-split dataset.')
+    manifest_bytes = split_manifest_path.read_bytes()
+    if hashlib.sha256(manifest_bytes).hexdigest() != SOURCE_SPLIT_MANIFEST_SHA256:
+        raise ValueError('dataset_split/split_manifest.json is not the verified source-split manifest.')
+    split_manifest = json.loads(manifest_bytes.decode('utf-8'))
+    if len(split_manifest) != 300:
+        raise ValueError(f'Source split manifest must map all 300 songs; found {len(split_manifest)}.')
+    song_id_values = [row.get('song_id') for row in split_manifest.values()]
+    if any(not isinstance(sid, str) or len(sid) != 16 for sid in song_id_values) or len(set(song_id_values)) != 300:
+        raise ValueError('Source split manifest has missing or duplicate song IDs; rebuild it from the verified mapping.')
+    mapping_counts = Counter(row.get('split') for row in split_manifest.values())
+    if mapping_counts != Counter(SOURCE_SONG_COUNTS):
+        raise ValueError(f'Wrong verified source-song split counts: {dict(mapping_counts)}')
+    for split, songs in split_ids.items():
+        if len(songs) != SOURCE_SONG_COUNTS[split]:
+            raise ValueError(f'Wrong source split size for {split}: expected {SOURCE_SONG_COUNTS[split]}, found {len(songs)}.')
+        for song in songs:
+            row = split_manifest.get(song)
+            if not row or row.get('song_id') not in set(song_id_values) or row.get('split') != split:
+                raise ValueError(f'Song folder does not match source split manifest: split={split}, folder={song}.')
+
+    source_song_split = {}
+    source_query_totals = Counter()
+    source_song_query_totals = Counter()
+    for row in SOURCE_QUERY_ROWS:
+        sid, source_split = row['song_id'], row['split']
+        previous = source_song_split.setdefault(sid, source_split)
+        if previous != source_split:
+            raise ValueError(f'Embedded source-query index has conflicting splits for song {sid}.')
+        source_query_totals[source_split] += 1
+        source_song_query_totals[sid] += 1
+    if source_query_totals != Counter(train=3612, val=766, test=809):
+        raise ValueError(f'Embedded source-query totals are invalid: {dict(source_query_totals)}')
+    if Counter(source_song_split.values()) != Counter(SOURCE_SONG_COUNTS):
+        raise ValueError('Embedded source-query index does not map 300 songs to the verified 210/45/45 splits.')
+
+    found_paths, found_by_song, found_by_split = {}, Counter(), Counter()
+    for split, songs in split_ids.items():
+        for song in songs:
+            row = split_manifest[song]
+            song_root = DATASET_SPLIT_DIR / split / song
+            if not song_root.is_dir():
+                raise FileNotFoundError(song_root)
+            for path in song_root.rglob('*.wav'):
+                query = SOURCE_QUERY_BY_ID.get(path.stem)
+                if query is None:
+                    continue
+                if path.stem in found_paths:
+                    raise ValueError(f'Duplicate source query ID in dataset: {path.stem}')
+                if query['song_id'] != row['song_id'] or query['split'] != split:
+                    raise ValueError(f'Query is routed to the wrong source song/split: {path}')
+                found_paths[path.stem] = path
+                found_by_song[query['song_id']] += 1
+                found_by_split[split] += 1
+                if split in ('train', 'val') and file_sha256(path) != query['humming_sha256']:
+                    raise ValueError(f'Source SHA256 mismatch for train/validation query {path.stem}.')
+            if row.get('num_hummings') != found_by_song[row['song_id']]:
+                raise ValueError(f'Actual query count disagrees with split manifest for {song}.')
+            if row.get('source_manifest_num_hummings') != source_song_query_totals[row['song_id']]:
+                raise ValueError(f'Source query total disagrees with embedded provenance for {song}.')
+
+    missing_ids = set(SOURCE_QUERY_BY_ID) - set(found_paths)
+    if missing_ids and missing_ids != set(KNOWN_MISSING_SOURCE_IDS):
+        raise ValueError(f'Unexpected missing source queries: {sorted(missing_ids)[:12]}')
+    expected_present = (AVAILABLE_QUERY_COUNTS if missing_ids else {'train': 3612, 'val': 766, 'test': 809})
+    if dict(found_by_split) != expected_present:
+        raise ValueError(f'Query file counts differ from verified source inventory: {dict(found_by_split)}')
+    package_contract = dict(
+        final_training_ready=not bool(missing_ids),
+        query_files_present_and_sha_verified=dict(found_by_split),
+        missing_source_query_files=sorted(missing_ids),
+        missing_source_query_counts_by_split=dict(Counter(SOURCE_QUERY_BY_ID[aid]['split'] for aid in missing_ids)),
+        source_split_counts_songs=SOURCE_SONG_COUNTS,
+        source_query_counts=source_query_totals,
+        source_split_mapping_sha256=SOURCE_MAPPING_SHA256,
+    )
+    if missing_ids:
+        if package_contract['missing_source_query_counts_by_split'] != {'test': 7, 'train': 29, 'val': 3}:
+            raise ValueError('Known missing query counts differ from the audited partial archive.')
+        qbh_stage('Use audited partial source split; train only on available train/validation queries')
+        print('[QBH WARNING] Preliminary run: 29 train and 3 validation queries are absent. '
+              'No test query is used for training or model selection.', flush=True)
+    return package_contract, split_manifest
+
 def split_songs(split):
     directory = DATASET_SPLIT_DIR / split
     if not directory.is_dir():
@@ -294,6 +421,14 @@ def scan_queries(split):
     return rows
 
 SPLIT_IDS = {name: split_songs(name) for name in ('train', 'val', 'test')}
+if SOLUTION_PHASE == 'train':
+    qbh_stage('Check source split and locked holdout contract')
+    _package_contract, _source_split_manifest = validate_dataset_package(SPLIT_IDS)
+    RUN_CONFIG['dataset_policy'] = ('audited_partial_source_archive'
+                                    if not _package_contract.get('final_training_ready', False)
+                                    else 'complete_source_archive')
+else:
+    _package_contract, _source_split_manifest = None, None
 for left, right in [('train', 'val'), ('train', 'test'), ('val', 'test')]:
     if set(SPLIT_IDS[left]) & set(SPLIT_IDS[right]):
         raise ValueError(f'Song leakage: {left}/{right}')
@@ -309,6 +444,47 @@ if set(GALLERY_PATHS) != set().union(*map(set, SPLIT_IDS.values())):
     raise ValueError('Full music gallery must exactly match the train/val/test song IDs.')
 
 TRAIN_ROWS, VAL_ROWS = scan_queries('train'), scan_queries('val')
+if SOLUTION_PHASE == 'train':
+    _expected_rows = (AVAILABLE_QUERY_COUNTS if not _package_contract.get('final_training_ready', False)
+                      else SOURCE_QUERY_COUNTS)
+    if len(TRAIN_ROWS) != _expected_rows['train'] or len(VAL_ROWS) != _expected_rows['val']:
+        raise ValueError(
+            f'Wrong train/validation query inventory: expected train={_expected_rows["train"]}, '
+            f'val={_expected_rows["val"]}; found train={len(TRAIN_ROWS)}, val={len(VAL_ROWS)}. '
+            'Check missing or duplicated humming WAVs.'
+        )
+    _locked_path = DATASET_SPLIT_DIR.parent / 'holdout' / 'locked_final_test_manifest.csv'
+    if not _locked_path.is_file():
+        raise FileNotFoundError('Missing locked 615-query holdout manifest in dataset package: ' + str(_locked_path))
+    if file_sha256(_locked_path) != LOCKED_MANIFEST_SHA256:
+        raise ValueError('Locked holdout manifest hash differs from the verified 615-query artifact.')
+    _locked_frame = pd.read_csv(_locked_path, dtype=str).fillna('')
+    if len(_locked_frame) != 615 or _locked_frame['audio_id'].nunique() != 615:
+        raise ValueError(f'Locked final holdout must have exactly 615 unique query IDs; found {len(_locked_frame)} rows.')
+    if _locked_frame['song_id'].nunique() != 36 or set(_locked_frame['source_split']) != {'test'}:
+        raise ValueError('Locked holdout must contain 36 original-test songs only.')
+    _locked_ids = set(_locked_frame['audio_id'])
+    _trainval_ids = {Path(row['path']).stem for row in TRAIN_ROWS + VAL_ROWS}
+    if _locked_ids & _trainval_ids:
+        raise ValueError('Locked test query IDs occur in train/validation; refusing model selection with leakage.')
+    _package_root = DATASET_SPLIT_DIR.parent.parent
+    for _row in _locked_frame.to_dict('records'):
+        _source_row = SOURCE_QUERY_BY_ID.get(_row['audio_id'])
+        if not _source_row or _source_row['split'] != 'test' or _source_row['song_id'] != _row['song_id']:
+            raise ValueError(f'Locked query disagrees with embedded source provenance: {_row["audio_id"]}')
+        _relative = PurePosixPath(str(_row['dataset_relpath']))
+        if _relative.parts[:3] != ('datasets', 'dataset_split', 'test'):
+            raise ValueError(f'Locked query is not stored under the test split: {_row["dataset_relpath"]}')
+        _path = _package_root.joinpath(*_relative.parts)
+        if not _path.is_file() or _path.stem != _row['audio_id']:
+            raise FileNotFoundError(f'Locked query path is missing or inconsistent: {_path}')
+        _song_folder = _relative.parts[3]
+        if _source_split_manifest[_song_folder].get('song_id') != _row['song_id']:
+            raise ValueError(f'Locked query song ID does not match source mapping: {_row["audio_id"]}')
+    if _package_contract.get('final_training_ready', False):
+        qbh_success('Verified complete 210/45/45 source split, 3,612/766 train-validation queries and 615 holdout paths; test audio bytes were not read.')
+    else:
+        qbh_success('Verified 210/45/45 source split, 3,583/763 available train-validation queries and 615 holdout paths; test audio bytes were not read.')
 VAL_GALLERY_PATHS = {s: p for s, p in GALLERY_PATHS.items()
                      if s in set(SPLIT_IDS['train'] + SPLIT_IDS['val'])}
 
@@ -556,10 +732,12 @@ def training_objective(outputs, labels, negative_labels, epoch, memory_bank):
     return dict(global_triplet=triplet, lat=lat, lac=lac, domain=domain, prototype=prototype, total=total), (ga, gp, gn)
 
 
+qbh_stage('Find and fingerprint CoverHunter SHS100K Stage-1 checkpoint')
 STAGE1_CKPT = unique_path(STAGE1_OVERRIDE, INPUT_ROOT.rglob('coverhunter_shs100k_pretrained.pth'), 'STAGE1_OVERRIDE')
 RUN_CONTRACT = dict(config=RUN_CONFIG, preprocessing=PREPROCESS_CONFIG,
                     code=SOURCE_CODE_DIGEST, runtime=RUNTIME_VERSIONS,
                     data=DATA_DIGEST, stage1=file_sha256(STAGE1_CKPT))
+qbh_success(f'Found pretrained checkpoint: {STAGE1_CKPT}')
 RUN_SIGNATURE = digest(RUN_CONTRACT)
 contract_path = TRAIN_OUTPUT / 'run_contract.json'
 if contract_path.exists():
@@ -568,6 +746,7 @@ if contract_path.exists():
 else:
     atomic_json(contract_path, RUN_CONTRACT)
 
+qbh_stage('Initialize model, optimizer, sampler and checkpoint state')
 train_dataset = FinalTripletDataset(TRAIN_ROWS)
 loader_generator = torch.Generator().manual_seed(42)
 sampler = SongBalancedBatchSampler(train_dataset, RUN_CONFIG['songs_per_batch'], RUN_CONFIG['samples_per_song'])
@@ -589,8 +768,10 @@ memory = CrossBatchMemoryBank(RUN_CONFIG['memory_capacity'])
 best_path, last_path = TRAIN_OUTPUT / BEST_NAME, TRAIN_OUTPUT / LAST_NAME
 history, best_mrr, patience, start_epoch, finished = [], -1.0, 0, 1, False
 best_snapshot = None
+qbh_success(f'Model initialized with {len(SPLIT_IDS["train"])} train songs and {len(TRAIN_ROWS)} train queries')
 
 if RESUME:
+    qbh_stage('Restore a compatible LAST checkpoint or start from Stage 1')
     source = last_path if last_path.exists() else (Path(RESUME_LAST_OVERRIDE) if RESUME_LAST_OVERRIDE else None)
     if source is not None:
         # RNG tensors must remain on CPU even when the model/optimizer live on CUDA.
@@ -610,10 +791,12 @@ if RESUME:
         commit_training_checkpoint(last_path, best_path, state)
         del state
         print('Resuming epoch:', start_epoch, '| Best fused validation MRR:', best_mrr)
+        qbh_success(f'Restored LAST checkpoint; next epoch={start_epoch}')
     elif best_path.exists() or RESUME_BEST_OVERRIDE is not None:
         raise FileNotFoundError('BEST alone cannot resume optimizer/RNG. Attach the matching LAST or use a fresh OUTPUT_ROOT.')
 elif last_path.exists() or best_path.exists():
     raise FileExistsError('Existing run: enable RESUME or choose a new OUTPUT_ROOT.')
+qbh_success('Resume contract is valid; training can proceed')
 
 def model_cpu_state():
     return {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
@@ -693,15 +876,20 @@ def gpu_preflight():
         torch.cuda.empty_cache()
 
 if not finished:
+    qbh_stage('GPU preflight: AMP, configured losses, optimizer update and scorer identity')
     gpu_preflight()
+    qbh_success('GPU preflight passed; probe weights and RNG were rolled back')
+    qbh_stage('Prewarm and validate all train/validation audio CQT features')
     prewarm_paths = sorted({r['path'] for r in TRAIN_ROWS + VAL_ROWS}
                            | {p for r in TRAIN_ROWS for p in r['refs'] + r['vocals']}
                            | set(VAL_GALLERY_PATHS.values()))
     for path in tqdm(prewarm_paths, desc='Validate audio and cache complete CQT'):
         raw_cqts(path)
+    qbh_success(f'Audio/CQT preflight passed for {len(prewarm_paths)} unique train/validation/reference/gallery files')
 
 if not finished:
     for epoch in range(start_epoch, RUN_CONFIG['epochs'] + 1):
+        qbh_stage(f'Train epoch {epoch}/{RUN_CONFIG["epochs"]}')
         model.train()
         memory.clear()
         optimizer.zero_grad(set_to_none=True)
@@ -742,6 +930,7 @@ if not finished:
             del outputs, oa, globals_, terms, total, a, p, n, value
         if skipped_updates == updates_per_epoch:
             raise FloatingPointError('All optimizer updates were skipped by AMP; do not accept this epoch.')
+        qbh_stage(f'Validate epoch {epoch} on the full train+validation gallery')
         model.eval()
         gallery = gallery_features(model, VAL_GALLERY_PATHS)
         val_rows = evaluate_queries(model, gallery, VAL_ROWS)
@@ -765,20 +954,28 @@ if not finished:
         commit_training_checkpoint(last_path, best_path, state)
         del state
         print(f'Epoch {epoch}: fused val MRR={val_mrr:.4f}, best={best_mrr:.4f}, patience={patience}')
+        qbh_success(f'Epoch {epoch} finished and LAST/BEST checkpoints were committed')
         if finished:
             break
 
 if not finished or not best_path.exists():
     raise RuntimeError('Training is not complete. Resume it before running final evaluation.')
+qbh_stage('Finalize checkpoint, receipt and training summary')
 best = export_best_checkpoint(best_path, best_snapshot, finished=True)
 receipt = dict(run_signature=RUN_SIGNATURE, checkpoint_sha256=file_sha256(best_path),
                best_epoch=best['epoch'], best_validation_fused_mrr=best['best_mrr'],
-               completed_epochs=len(history), test_evaluated=False)
+               completed_epochs=len(history), test_evaluated=False,
+               dataset_status='partial_audited_source_archive' if not _package_contract.get('final_training_ready', False)
+                              else 'complete_source_archive',
+               train_queries=len(TRAIN_ROWS), validation_queries=len(VAL_ROWS),
+               known_missing_train_queries=29 if not _package_contract.get('final_training_ready', False) else 0,
+               known_missing_validation_queries=3 if not _package_contract.get('final_training_ready', False) else 0)
 atomic_json(TRAIN_OUTPUT / 'final_manifest.json', receipt)
 model.load_state_dict(best['model_state_dict'])
 model.eval()
 print('Training complete. Best checkpoint:', best_path)
 display(pd.DataFrame([receipt]))
+qbh_success(f'Training complete: best epoch={best["epoch"]}, validation fused MRR={best["best_mrr"]:.6f}, checkpoint={best_path}')
 
 # %% plots
 frame = pd.DataFrame(history)

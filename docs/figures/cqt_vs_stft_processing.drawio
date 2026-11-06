@@ -1,0 +1,49 @@
+<mxfile host="drawio-skill" agent="diagram-ir" version="3.0.0">
+  <diagram id="system" name="System">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="raw_audio" value="Raw Audio Waveform (22,050 Hz, Mono, 5-15s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="raw_audio" data-kind="data" data-properties="{&quot;layer&quot;:&quot;input&quot;}" data-source-properties="{&quot;layer&quot;:&quot;input&quot;}" data-source-label="Raw Audio Waveform&#10;(22,050 Hz, Mono, 5-15s)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\cqt_vs_stft_processing.ir.json&quot;}">
+          <mxGeometry x="60" y="80" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="stft_limitation" value="Traditional STFT (Linear Δf = fs/N Poor Low-Freq Pitch Resolution)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="stft_limitation" data-kind="component" data-properties="{&quot;layer&quot;:&quot;comparison&quot;}" data-source-properties="{&quot;layer&quot;:&quot;comparison&quot;}" data-source-label="Traditional STFT&#10;(Linear Δf = fs/N&#10;Poor Low-Freq Pitch Resolution)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\cqt_vs_stft_processing.ir.json&quot;}">
+          <mxGeometry x="290" y="80" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vocal_separator" value="Meta HTDemucs v4 (Hybrid Transformer Vocal Isolation Triệt tiêu nhạc nền phức tạp)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="vocal_separator" data-kind="service" data-properties="{&quot;layer&quot;:&quot;dsp&quot;}" data-source-properties="{&quot;layer&quot;:&quot;dsp&quot;}" data-source-label="Meta HTDemucs v4&#10;(Hybrid Transformer Vocal Isolation&#10;Triệt tiêu nhạc nền phức tạp)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\cqt_vs_stft_processing.ir.json&quot;}">
+          <mxGeometry x="520" y="80" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="augmentor" value="QBH Audio Augmentations (Pitch Shift ±12 Semitones Reverb RIR + Harmonic Noise)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="augmentor" data-kind="service" data-properties="{&quot;layer&quot;:&quot;dsp&quot;}" data-source-properties="{&quot;layer&quot;:&quot;dsp&quot;}" data-source-label="QBH Audio Augmentations&#10;(Pitch Shift ±12 Semitones&#10;Reverb RIR + Harmonic Noise)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\cqt_vs_stft_processing.ir.json&quot;}">
+          <mxGeometry x="60" y="230" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cqt_engine" value="Constant-Q Transform (CQT) (Q = fk / Δfk = 16.89, B = 12 bins/oct Logarithmic Frequency Scale)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="cqt_engine" data-kind="service" data-properties="{&quot;layer&quot;:&quot;transformation&quot;}" data-source-properties="{&quot;layer&quot;:&quot;transformation&quot;}" data-source-label="Constant-Q Transform (CQT)&#10;(Q = fk / Δfk = 16.89, B = 12 bins/oct&#10;Logarithmic Frequency Scale)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\cqt_vs_stft_processing.ir.json&quot;}">
+          <mxGeometry x="290" y="230" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="full_cqt_output" value="Full CQT Spectrogram (96 x 83) (8 Octaves C1 ~ 32.7Hz to B8 ~ 7902Hz Hop Length = 512, Log-Power)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="full_cqt_output" data-kind="data" data-properties="{&quot;layer&quot;:&quot;output&quot;}" data-source-properties="{&quot;layer&quot;:&quot;output&quot;}" data-source-label="Full CQT Spectrogram (96 x 83)&#10;(8 Octaves C1 ~ 32.7Hz to B8 ~ 7902Hz&#10;Hop Length = 512, Log-Power)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\cqt_vs_stft_processing.ir.json&quot;}">
+          <mxGeometry x="520" y="230" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="chroma_baseline" value="Chroma CQT Baseline (12 bins) (Gập quãng tám - Mất thông tin thanh vực Baseline trong QBH.pdf)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1" data-model-id="chroma_baseline" data-kind="component" data-properties="{&quot;layer&quot;:&quot;comparison&quot;}" data-source-properties="{&quot;layer&quot;:&quot;comparison&quot;}" data-source-label="Chroma CQT Baseline (12 bins)&#10;(Gập quãng tám - Mất thông tin thanh vực&#10;Baseline trong QBH.pdf)" data-provenance="{&quot;path&quot;:&quot;E:\\HOCKY7\\PBL6\\code\\docs\\figures\\cqt_vs_stft_processing.ir.json&quot;}">
+          <mxGeometry x="60" y="380" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-0" value="Hạn chế phân giải" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="raw_audio" target="stft_limitation" data-model-id="e_raw_to_stft" data-kind="relation" data-properties="{}" data-source-properties="{}" data-source-label="Hạn chế phân giải">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-1" value="Tách giọng hát" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="raw_audio" target="vocal_separator" data-model-id="e_raw_to_vocal" data-kind="relation" data-properties="{}" data-source-properties="{}" data-source-label="Tách giọng hát">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-2" value="Tăng cường âm học" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="vocal_separator" target="augmentor" data-model-id="e_vocal_to_aug" data-kind="relation" data-properties="{}" data-source-properties="{}" data-source-label="Tăng cường âm học">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-3" value="Biến đổi phổ" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="augmentor" target="cqt_engine" data-model-id="e_aug_to_cqt" data-kind="relation" data-properties="{}" data-source-properties="{}" data-source-label="Biến đổi phổ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-4" value="Biểu diễn chuẩn 96 bins" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="cqt_engine" target="full_cqt_output" data-model-id="e_cqt_to_full" data-kind="relation" data-properties="{}" data-source-properties="{}" data-source-label="Biểu diễn chuẩn 96 bins">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-system-5" value="So sánh đối chứng" style="endArrow=classic;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;fontStyle=1;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1;" edge="1" parent="1" source="full_cqt_output" target="chroma_baseline" data-model-id="e_full_to_chroma" data-kind="relation" data-properties="{}" data-source-properties="{}" data-source-label="So sánh đối chứng">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

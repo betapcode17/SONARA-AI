@@ -1,0 +1,157 @@
+{
+  "schema": "drawio-skill/diagram-ir/v1",
+  "metadata": {
+    "title": "Conformer-ByteHum V6.2 Neural Network Architecture"
+  },
+  "nodes": [
+    {
+      "id": "cqt_input",
+      "label": "Log-CQT Spectrogram\n(B x 96 bins x 83 frames)",
+      "kind": "data",
+      "properties": {
+        "layer": "input"
+      }
+    },
+    {
+      "id": "conv_subsampling",
+      "label": "Convolutional Subsampling\n(Conv2d Stride (2,2) + Linear Proj D=144)",
+      "kind": "component",
+      "properties": {
+        "layer": "backbone"
+      }
+    },
+    {
+      "id": "conformer_blocks",
+      "label": "6x Conformer Encoders (9.91M Params)\n(Macaron 1/2 FFN + MHSA (4 heads) +\nDepthwise Conv1d (k=31) + 1/2 FFN)",
+      "kind": "model",
+      "properties": {
+        "layer": "backbone"
+      }
+    },
+    {
+      "id": "asp_pooling",
+      "label": "Attentive Statistics Pooling (ASP)\n(Attention Weights -> Mean & Std Dev -> 512D)",
+      "kind": "component",
+      "properties": {
+        "layer": "feature_extractor"
+      }
+    },
+    {
+      "id": "global_proj",
+      "label": "Global Metric Embedding\n(Dense 512D -> 128D, L2 Normalized)",
+      "kind": "data",
+      "properties": {
+        "layer": "embedding"
+      }
+    },
+    {
+      "id": "local_seq",
+      "label": "Local Frame Sequence\n(Time Slices T=20 x 128D Vectors)",
+      "kind": "data",
+      "properties": {
+        "layer": "embedding"
+      }
+    },
+    {
+      "id": "bytehum_lat",
+      "label": "ByteHum LAT Module\n(Learned Alignment Transformer\nMaxMean Cross-Attention Similarity)",
+      "kind": "component",
+      "properties": {
+        "layer": "bytehum"
+      }
+    },
+    {
+      "id": "bytehum_lac",
+      "label": "ByteHum LAC Module\n(Learned Alignment Classifier\nL2 Prototypes on Hypersphere)",
+      "kind": "component",
+      "properties": {
+        "layer": "bytehum"
+      }
+    },
+    {
+      "id": "bytehum_grl",
+      "label": "Domain Adversarial GRL\n(Gradient Reversal Layer -> Domain Classifier\nHumming vs Master Studio Vocal)",
+      "kind": "component",
+      "properties": {
+        "layer": "bytehum"
+      }
+    },
+    {
+      "id": "loss_fusion",
+      "label": "Joint Multi-Task Objective\n(L_total = L_metric + λ1*L_LAT + λ2*L_LAC + λ3*L_domain)",
+      "kind": "output",
+      "properties": {
+        "layer": "training"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_in_to_sub",
+      "source": "cqt_input",
+      "target": "conv_subsampling",
+      "label": "Patch Subsampling"
+    },
+    {
+      "id": "e_sub_to_conf",
+      "source": "conv_subsampling",
+      "target": "conformer_blocks",
+      "label": "Sequence Input"
+    },
+    {
+      "id": "e_conf_to_asp",
+      "source": "conformer_blocks",
+      "target": "asp_pooling",
+      "label": "Frame Features"
+    },
+    {
+      "id": "e_conf_to_local",
+      "source": "conformer_blocks",
+      "target": "local_seq",
+      "label": "Temporal Frames"
+    },
+    {
+      "id": "e_asp_to_glob",
+      "source": "asp_pooling",
+      "target": "global_proj",
+      "label": "ASP Projection"
+    },
+    {
+      "id": "e_local_to_lat",
+      "source": "local_seq",
+      "target": "bytehum_lat",
+      "label": "Local Alignment"
+    },
+    {
+      "id": "e_lat_to_lac",
+      "source": "bytehum_lat",
+      "target": "bytehum_lac",
+      "label": "Prototype Scoring"
+    },
+    {
+      "id": "e_conf_to_grl",
+      "source": "conformer_blocks",
+      "target": "bytehum_grl",
+      "label": "Domain Invariance"
+    },
+    {
+      "id": "e_glob_to_loss",
+      "source": "global_proj",
+      "target": "loss_fusion",
+      "label": "Metric Loss"
+    },
+    {
+      "id": "e_lac_to_loss",
+      "source": "bytehum_lac",
+      "target": "loss_fusion",
+      "label": "LAT/LAC Losses"
+    },
+    {
+      "id": "e_grl_to_loss",
+      "source": "bytehum_grl",
+      "target": "loss_fusion",
+      "label": "Domain Loss"
+    }
+  ]
+}
+

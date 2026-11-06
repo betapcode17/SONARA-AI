@@ -1,0 +1,153 @@
+{
+  "schema": "drawio-skill/diagram-ir/v1",
+  "metadata": {
+    "title": "PBL6 Conformer-ByteHum QbH System Architecture"
+  },
+  "nodes": [
+    {
+      "id": "client_mic",
+      "label": "User / Microphone\n(Humming Query 5-15s)",
+      "kind": "client",
+      "properties": {
+        "layer": "presentation"
+      }
+    },
+    {
+      "id": "web_frontend",
+      "label": "Web Frontend\n(HTML5 / React Player)",
+      "kind": "frontend",
+      "properties": {
+        "layer": "presentation"
+      }
+    },
+    {
+      "id": "api_gateway",
+      "label": "FastAPI Backend Service\n(/api/qbh/search)",
+      "kind": "service",
+      "properties": {
+        "layer": "api"
+      }
+    },
+    {
+      "id": "cqt_preprocessor",
+      "label": "Audio Preprocessor\n(CQT 96 bins x 83 frames, In-RAM Cache)",
+      "kind": "service",
+      "properties": {
+        "layer": "processing"
+      }
+    },
+    {
+      "id": "conformer_backbone",
+      "label": "Conformer Backbone (CoverHunter)\n(6 Blocks, MHSA + Depthwise Conv, 9.91M params)",
+      "kind": "model",
+      "properties": {
+        "layer": "ai_inference"
+      }
+    },
+    {
+      "id": "dual_embeddings",
+      "label": "Dual Representation\n(Global ASP 128D + Local Sequence 20x128D)",
+      "kind": "component",
+      "properties": {
+        "layer": "ai_inference"
+      }
+    },
+    {
+      "id": "scoring_engine",
+      "label": "Scoring Engine V6.2\n(Top-K Quantile Pooling 85% + Fused 75/25)",
+      "kind": "service",
+      "properties": {
+        "layer": "retrieval"
+      }
+    },
+    {
+      "id": "gallery_database",
+      "label": "Gallery Database (348 Songs)\n(Full Recordings + Demucs Vocal Stems)",
+      "kind": "database",
+      "properties": {
+        "layer": "storage"
+      }
+    },
+    {
+      "id": "cloudinary_cdn",
+      "label": "Cloudinary CDN Storage\n(pbl6_music_database/ 300 MP3s)",
+      "kind": "cloud",
+      "properties": {
+        "layer": "storage"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "client_mic",
+      "target": "web_frontend",
+      "label": "Voice Record",
+      "kind": "async"
+    },
+    {
+      "id": "e2",
+      "source": "web_frontend",
+      "target": "api_gateway",
+      "label": "POST /api/search (WAV)",
+      "kind": "sync"
+    },
+    {
+      "id": "e3",
+      "source": "api_gateway",
+      "target": "cqt_preprocessor",
+      "label": "Raw 16kHz Audio",
+      "kind": "sync"
+    },
+    {
+      "id": "e4",
+      "source": "cqt_preprocessor",
+      "target": "conformer_backbone",
+      "label": "CQT Spectrogram",
+      "kind": "sync"
+    },
+    {
+      "id": "e5",
+      "source": "conformer_backbone",
+      "target": "dual_embeddings",
+      "label": "Latent Features",
+      "kind": "sync"
+    },
+    {
+      "id": "e6",
+      "source": "dual_embeddings",
+      "target": "scoring_engine",
+      "label": "Query Embeddings",
+      "kind": "sync"
+    },
+    {
+      "id": "e7",
+      "source": "gallery_database",
+      "target": "scoring_engine",
+      "label": "Cached Gallery Embeddings",
+      "kind": "sync"
+    },
+    {
+      "id": "e8",
+      "source": "scoring_engine",
+      "target": "api_gateway",
+      "label": "Top 5 Ranked Song IDs",
+      "kind": "sync"
+    },
+    {
+      "id": "e9",
+      "source": "api_gateway",
+      "target": "web_frontend",
+      "label": "JSON (Titles, MRR, CDN URLs)",
+      "kind": "sync"
+    },
+    {
+      "id": "e10",
+      "source": "cloudinary_cdn",
+      "target": "web_frontend",
+      "label": "Direct Audio Stream (MP3)",
+      "kind": "stream"
+    }
+  ],
+  "views": []
+}
